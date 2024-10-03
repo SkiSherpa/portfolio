@@ -36,6 +36,14 @@ export const links = [
 
 export const experiencesData = [
 	{
+		title: "Visiting Assistant Professor of Physics",
+		location: "Los Angeles, CA",
+		description:
+			"Courses taught: Introduction to Mechanics, General Physics I & II, Qualitative Skills in the Modern World, College Algebra, Pre-Calculus.",
+		icon: React.createElement(LuGraduationCap),
+		date: "2017 - 2021",
+	},
+	{
 		title: "Graduated Hack Reactor Bootcamp",
 		location: "Los Angeles, CA",
 		description:
