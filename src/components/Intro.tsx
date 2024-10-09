@@ -39,28 +39,29 @@ export default function Intro() {
 				<span className="underline">React (Next.js)</span>.
 			</motion.h1>
 			<motion.div
-				className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+				className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium"
 				initial={{ opacity: 0, y: 100 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ delay: 0.1 }} // have the buttons come in 0.1 sec after intro. it looks cool
 			>
 				<Link
 					href="#contact"
-					className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full"
+					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition"
 				>
-					Contact me here <BsArrowRight />{" "}
+					Contact me here
+					<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
 				</Link>
-				<a className="bg-white px-7 py-3 flex items-center gap-2 rounded-full">
-					Download CV <HiDownload />{" "}
+				<a className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 hover:border-sky-400 active:scale-105 transition">
+					Download CV <HiDownload />
 				</a>
 				<a>
-					<BsLinkedin className=" text-gray-700 rounded-full text-[1.5rem]" />
+					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 hover:border-2 hover:border-sky-400 transition" />
 				</a>
 				<a>
-					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[1.5rem]" />
+					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition" />
 				</a>
 				<a>
-					<SiGitlab className="bg-white text-gray-700 rounded-md text-[1.5rem]" />{" "}
+					<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition" />
 				</a>
 			</motion.div>
 		</section>
