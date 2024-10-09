@@ -6,6 +6,7 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { SiGitlab } from "react-icons/si";
 
 export default function Intro() {
 	return (
@@ -37,7 +38,12 @@ export default function Intro() {
 				building <span className="italic">sites & apps</span>. My focus is{" "}
 				<span className="underline">React (Next.js)</span>.
 			</motion.h1>
-			<div className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium">
+			<motion.div
+				className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+				initial={{ opacity: 0, y: 100 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.1 }} // have the buttons come in 0.1 sec after intro. it looks cool
+			>
 				<Link
 					href="#contact"
 					className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full"
@@ -53,7 +59,10 @@ export default function Intro() {
 				<a>
 					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[1.5rem]" />
 				</a>
-			</div>
+				<a>
+					<SiGitlab className="bg-white text-gray-700 rounded-md text-[1.5rem]" />{" "}
+				</a>
+			</motion.div>
 		</section>
 	);
 }
