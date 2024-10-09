@@ -51,17 +51,17 @@ export default function Intro() {
 					Contact me here
 					<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
 				</Link>
-				<a className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 hover:border-sky-400 active:scale-105 transition">
+				<a className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 hover:border-sky-400 active:scale-105 transition cursor-pointer">
 					Download CV <HiDownload />
 				</a>
 				<a>
-					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 hover:border-2 hover:border-sky-400 transition" />
+					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 hover:border-2 hover:border-sky-400 transition cursor-pointer" />
 				</a>
 				<a>
-					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition" />
+					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition cursor-pointer" />
 				</a>
 				<a>
-					<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition" />
+					<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition cursor-pointer" />
 				</a>
 			</motion.div>
 		</section>
