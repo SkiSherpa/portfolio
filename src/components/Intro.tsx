@@ -51,7 +51,11 @@ export default function Intro() {
 					Contact me here
 					<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
 				</Link>
-				<a className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 hover:border-sky-400 active:scale-105 transition cursor-pointer">
+				<a
+					className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 hover:border-sky-400 active:scale-105 transition cursor-pointer"
+					href="/ErickWatanabeResume.pdf"
+					download={true}
+				>
 					Download CV <HiDownload />
 				</a>
 				<a>
