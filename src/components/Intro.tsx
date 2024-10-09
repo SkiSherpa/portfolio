@@ -37,7 +37,7 @@ export default function Intro() {
 				building <span className="italic">sites & apps</span>. My focus is{" "}
 				<span className="underline">React (Next.js)</span>.
 			</motion.h1>
-			<div className="flex flex-col sm:flex-grow items-center justify-center gap-2 px-4 text-lg font-medium">
+			<div className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium">
 				<Link
 					href="#contact"
 					className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full"
@@ -48,10 +48,10 @@ export default function Intro() {
 					Download CV <HiDownload />{" "}
 				</a>
 				<a>
-					<BsLinkedin className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full" />
+					<BsLinkedin className=" text-gray-700 rounded-full text-[1.5rem]" />
 				</a>
 				<a>
-					<FaGithubSquare className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full" />
+					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[1.5rem]" />
 				</a>
 			</div>
 		</section>
