@@ -54,7 +54,7 @@ export const experiencesData = [
 		title: "Full-Stack Engineer Contractor",
 		location: "Long Beach, CA",
 		description:
-			"My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+			"Our stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
 		icon: React.createElement(FaReact),
 		date: "2024 - present",
 	},
