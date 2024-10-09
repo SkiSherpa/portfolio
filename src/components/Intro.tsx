@@ -2,6 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
+import { FaGithubSquare } from "react-icons/fa";
 
 export default function Intro() {
 	return (
@@ -33,6 +37,23 @@ export default function Intro() {
 				building <span className="italic">sites & apps</span>. My focus is{" "}
 				<span className="underline">React (Next.js)</span>.
 			</motion.h1>
+			<div className="flex flex-col sm:flex-grow items-center justify-center gap-2 px-4 text-lg font-medium">
+				<Link
+					href="#contact"
+					className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full"
+				>
+					Contact me here <BsArrowRight />{" "}
+				</Link>
+				<a className="bg-white px-7 py-3 flex items-center gap-2 rounded-full">
+					Download CV <HiDownload />{" "}
+				</a>
+				<a>
+					<BsLinkedin className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full" />
+				</a>
+				<a>
+					<FaGithubSquare className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full" />
+				</a>
+			</div>
 		</section>
 	);
 }
