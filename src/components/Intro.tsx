@@ -36,7 +36,8 @@ export default function Intro() {
 				<span className="font-bold">full-stack developer</span> with{" "}
 				<span className="font-bold">3 years</span> of experience. I enjoy
 				building <span className="italic">sites & apps</span>. My focus is{" "}
-				<span className="underline">React (Next.js)</span>.
+				<span className="underline">React</span> and{" "}
+				<span className="underline">Next.js</span>.
 			</motion.h1>
 			<motion.div
 				className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium"
@@ -46,13 +47,13 @@ export default function Intro() {
 			>
 				<Link
 					href="#contact"
-					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition"
+					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
 				>
 					Contact me here
 					<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
 				</Link>
 				<a
-					className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 hover:border-sky-400 active:scale-105 transition cursor-pointer"
+					className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 hover:border-sky-600 hover:text-sky-600 active:scale-105 transition cursor-pointer"
 					href="/ErickWatanabeResume.pdf"
 					download={true}
 				>
@@ -63,21 +64,21 @@ export default function Intro() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 hover:border-2 hover:border-sky-400 transition cursor-pointer" />
+					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 hover:border-2 hover:border-sky-600 transition cursor-pointer" />
 				</a>
 				<a
 					href="https://github.com/SkiSherpa"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition cursor-pointer" />
+					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition cursor-pointer" />
 				</a>
 				<a
 					href="https://gitlab.com/SkiSherpa"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-400 active:scale-105 transition cursor-pointer" />
+					<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition cursor-pointer" />
 				</a>
 			</motion.div>
 		</section>
