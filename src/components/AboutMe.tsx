@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 // import { useSectionInView } from "@/lib/hooks";
 
 export default function AboutMe() {
@@ -15,7 +16,7 @@ export default function AboutMe() {
 			transition={{ delay: 0.15 }}
 			id="about"
 		>
-			<h2 className="text-2xl font-bold sm:text-3xl capitalize">About me</h2>
+			<SectionHeader>About me</SectionHeader>
 			<p className="mb-3">
 				A <span className="font-medium">Physics Professor</span> turned{" "}
 				<span className="font-medium">Software Engineer</span>. After 12 years
