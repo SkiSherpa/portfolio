@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function SectionHeader({
+export default function SectionHeading({
 	children,
 }: {
 	children: React.ReactNode;
