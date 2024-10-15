@@ -2,9 +2,6 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import DealerSysLandingPageImg from "/DealerSysLandingPageImg.png";
-import AnimosHomePageImg from "/AnimosHomePageImg.png";
-import ValterTennisImg from "/ValterTennis.png";
 
 export const links = [
 	{
@@ -65,7 +62,7 @@ export const projectsData = [
 		title: "Valter Pavia Tennis Academy",
 		description:
 			"I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-		tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+		tags: ["React", "Next.js", "Tailwind", "Firebase"],
 		imageUrl: "/ValterTennis.png",
 	},
 	{
@@ -80,7 +77,7 @@ export const projectsData = [
 		description:
 			"A single-page application that keeps track of a car dealership’s inventory, sales, and services.",
 		tags: ["React", "Django 4", "PostgreSQL", "Python 3"],
-		imageUrl: "/DealerSysLandingPage.png",
+		imageUrl: "/DealerSysLight.png",
 	},
 ] as const;
 
