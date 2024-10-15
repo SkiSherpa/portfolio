@@ -66,21 +66,21 @@ export const projectsData = [
 		description:
 			"I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
 		tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-		imageUrl: "/ValterTennisImg",
+		imageUrl: "/ValterTennis.png",
 	},
 	{
 		title: "Animos",
 		description:
 			"Single-page application allowing users to create and attend pet-friendly events. I was the full-stack developer. It has features like creating and listing pet friendly events.",
 		tags: ["React", "FastAPI", "JavaScript", "Python 3", "Redux", "MongoDB"],
-		imageUrl: "/AnimosHomePageImg",
+		imageUrl: "/AnimosHomePage.png",
 	},
 	{
 		title: "DealerSys",
 		description:
 			"A single-page application that keeps track of a car dealership’s inventory, sales, and services.",
 		tags: ["React", "Django 4", "PostgreSQL", "Python 3"],
-		imageUrl: "/DealerSysLandingPageImg",
+		imageUrl: "/DealerSysLandingPage.png",
 	},
 ] as const;
 
