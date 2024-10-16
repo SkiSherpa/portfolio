@@ -10,7 +10,7 @@ import { SiGitlab } from "react-icons/si";
 
 export default function Intro() {
 	return (
-		<section className="mb-8 max-w-[50rem]">
+		<section id="home" className="mb-8 max-w-[50rem] scroll-mt-[100rem]">
 			<div className="flex items-center justify-center">
 				<motion.div
 					initial={{ opacity: 0, scale: 0 }} // initial conditions, completely transparent, size set to zero
