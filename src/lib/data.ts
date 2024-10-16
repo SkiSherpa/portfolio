@@ -61,14 +61,14 @@ export const projectsData = [
 	{
 		title: "Valter Pavia Tennis Academy",
 		description:
-			"I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
+			"As a full-stack engineer contractor I helped develop a platform allows coaches to design and manage their own websites, accessible on both desktop and mobile devices.",
 		tags: ["React", "Next.js", "Tailwind", "Firebase"],
 		imageUrl: "/ValterTennis.png",
 	},
 	{
 		title: "Animos",
 		description:
-			"Single-page application allowing users to create and attend pet-friendly events. I was the full-stack developer. It has features like creating and listing pet friendly events.",
+			"Developed a single-page application enabling users to create, browse, and attend pet-friendly events. As the full-stack developer, I implemented key features including event creation and listing functionality.",
 		tags: ["React", "FastAPI", "JavaScript", "Python 3", "Redux", "MongoDB"],
 		imageUrl: "/AnimosHomePage.png",
 	},
