@@ -17,13 +17,14 @@ export default function AboutMe() {
 			id="about"
 		>
 			<SectionHeading>About me</SectionHeading>
-			<p className="mb-3">
+			<p className="mb-3 p-2">
 				A <span className="font-medium">Physics Professor</span> turned{" "}
 				<span className="font-medium">Software Engineer</span>. After 12 years
 				of teaching I wanted a change. I enrolled in a coding bootcamp and
 				learned <span className="font-medium">full-stack web development</span>.{" "}
-				<span className="italic">My favorite part of programming</span> is the
-				flow building applications and the problem-solving aspect. I{" "}
+				My <span className="italic">favorite</span> part of{" "}
+				<span className="italic">programming</span> is the building applications
+				and the problem-solving aspect. I{" "}
 				<span className="underline">love</span> falling into the the{" "}
 				<span className="font-medium">flow</span> of coding and revel in solving
 				problems that come with creating applications. My core stack is{" "}
