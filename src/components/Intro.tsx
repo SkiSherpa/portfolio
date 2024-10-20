@@ -64,21 +64,21 @@ export default function Intro() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 hover:border-2 hover:border-sky-600 transition cursor-pointer" />
+					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-110 hover:border hover:border-sky-600 transition cursor-pointer" />
 				</a>
 				<a
 					href="https://github.com/SkiSherpa"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition cursor-pointer" />
+					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 hover:border hover:border-sky-600 active:scale-110 transition cursor-pointer" />
 				</a>
 				<a
 					href="https://gitlab.com/SkiSherpa"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition cursor-pointer" />
+					<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-110 transition cursor-pointer" />
 				</a>
 			</motion.div>
 		</section>
