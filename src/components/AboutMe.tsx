@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 // import { useSectionInView } from "@/lib/hooks";
@@ -11,9 +11,11 @@ export default function AboutMe() {
 	const { ref, inView } = useInView();
 	const { setActiveSection } = useActiveSectionContext();
 
-	if (inView) {
-		setActiveSection("About");
-	}
+	useEffect(() => {
+		if (inView) {
+			setActiveSection("About");
+		}
+	}, [inView, setActiveSection]);
 
 	return (
 		<motion.section
