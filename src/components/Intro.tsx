@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -7,10 +7,26 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { SiGitlab } from "react-icons/si";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Intro() {
+	const { ref, inView } = useInView({
+		threshold: 0.25,
+	});
+	const { setActiveSection } = useActiveSectionContext();
+
+	useEffect(() => {
+		if (inView) {
+			setActiveSection("Home");
+		}
+	}, [inView, setActiveSection]);
 	return (
-		<section id="home" className="mb-8 max-w-[50rem] scroll-mt-[100rem]">
+		<section
+			ref={ref}
+			id="home"
+			className="mb-8 max-w-[50rem] scroll-mt-[100rem]"
+		>
 			<div className="flex items-center justify-center">
 				<motion.div
 					initial={{ opacity: 0, scale: 0 }} // initial conditions, completely transparent, size set to zero

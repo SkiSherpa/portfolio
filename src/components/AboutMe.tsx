@@ -8,7 +8,9 @@ import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function AboutMe() {
-	const { ref, inView } = useInView();
+	const { ref, inView } = useInView({
+		threshold: 0.85,
+	});
 	const { setActiveSection } = useActiveSectionContext();
 
 	useEffect(() => {
