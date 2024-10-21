@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
+import ActiveSectionContextProvider from "@/context/active-section-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,8 +29,10 @@ export default function RootLayout({
 					className="bg-stone-400 absolute top-[-1rem] -z-10 left-[-35rem] w-[50rem] rounded-full blur-[10rem] md:w-[68.75rem] md:left-[33rem] lg:left-[-28rem]
 				"
 				></div>
-				<Header />
-				{children}
+				<ActiveSectionContextProvider>
+					<Header />
+					{children}
+				</ActiveSectionContextProvider>
 			</body>
 		</html>
 	);
