@@ -7,7 +7,8 @@ import cn from "classnames";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Header() {
-	const { activeSection, setActiveSection } = useActiveSectionContext();
+	const { activeSection, setActiveSection, setTimeOfLastClick } =
+		useActiveSectionContext();
 
 	return (
 		<header className="z-[999] relative flex justify-center">
@@ -27,7 +28,10 @@ export default function Header() {
 						>
 							<Link
 								href={link.hash}
-								onClick={() => setActiveSection(link.name)}
+								onClick={() => {
+									setActiveSection(link.name);
+									setTimeOfLastClick(Date.now());
+								}}
 								className={cn(
 									"flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition",
 									{ "text-gray-950": activeSection === link.name }
