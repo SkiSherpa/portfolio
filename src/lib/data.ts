@@ -32,12 +32,12 @@ export const links = [
 
 export const experiencesData = [
 	{
-		title: "Visiting Assistant Professor of Physics",
-		location: "Los Angeles, CA",
+		title: "Full-Stack Engineer Contractor",
+		location: "Long Beach, CA",
 		description:
-			"Courses taught: Introduction to Mechanics, General Physics I & II, Qualitative Skills in the Modern World, College Algebra, Pre-Calculus.",
-		icon: React.createElement(LuGraduationCap),
-		date: "2017 - 2021",
+			"Our stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+		icon: React.createElement(FaReact),
+		date: "2024 - present",
 	},
 	{
 		title: "Graduated Hack Reactor Bootcamp",
@@ -48,12 +48,12 @@ export const experiencesData = [
 		date: "2023",
 	},
 	{
-		title: "Full-Stack Engineer Contractor",
-		location: "Long Beach, CA",
+		title: "Visiting Assistant Professor of Physics",
+		location: "Los Angeles, CA",
 		description:
-			"Our stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-		icon: React.createElement(FaReact),
-		date: "2024 - present",
+			"Courses taught: Introduction to Mechanics, General Physics I & II, Qualitative Skills in the Modern World, College Algebra, Pre-Calculus.",
+		icon: React.createElement(LuGraduationCap),
+		date: "2017 - 2021",
 	},
 ] as const;
 
