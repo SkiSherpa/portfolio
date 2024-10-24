@@ -11,7 +11,7 @@ import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Experience() {
-	const { ref } = useSectionInView("Experience", 0.85);
+	const { ref, inView } = useSectionInView("Experience", 0.85);
 	return (
 		<section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
 			<SectionHeading>My experience</SectionHeading>
@@ -32,7 +32,7 @@ export default function Experience() {
 							date={exp.date}
 							iconStyle={{ background: "white", fontSize: "1.5rem" }}
 							icon={exp.icon}
-							visible={true}
+							visible={inView}
 						>
 							<h3 className="font-semibold capitalize">{exp.title}</h3>
 							<h4 className="font-normal !mt-0">{exp.location}</h4>
