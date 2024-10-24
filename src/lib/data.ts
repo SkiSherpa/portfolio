@@ -121,4 +121,5 @@ export const skillsData = [
 	"RabbitMQ",
 	"Agile",
 	"Physics",
+	"Teaching",
 ] as const;
