@@ -1,7 +1,8 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaRegSnowflake } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { PiExam } from "react-icons/pi";
 
 export const links = [
 	{
@@ -52,8 +53,24 @@ export const experiencesData = [
 		location: "Los Angeles, CA",
 		description:
 			"Courses taught: Introduction to Mechanics, General Physics I & II, Qualitative Skills in the Modern World, College Algebra, Pre-Calculus.",
-		icon: React.createElement(LuGraduationCap),
+		icon: React.createElement(PiExam),
 		date: "2017 - 2021",
+	},
+	{
+		title: "Graduate Teaching Assistant",
+		location: "Los Angeles, CA",
+		description:
+			"Directed meetings for the Teaching Associates in Introduction to the Physical Sciences to instruct teaching assistants in how to conduct their lab sections.",
+		icon: React.createElement(LuGraduationCap),
+		date: "2013 - 2016",
+	},
+	{
+		title: "Certified PSIA level I Ski Instructor",
+		location: "Los Angeles, CA",
+		description:
+			"Instructing people of all ages the basic and advance mechanics of skiing.",
+		icon: React.createElement(FaRegSnowflake),
+		date: "2011 - 2013",
 	},
 ] as const;
 
