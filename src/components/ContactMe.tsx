@@ -36,10 +36,14 @@ export default function ContactMe() {
 					className="h-14 rounded-lg borderBlack px-4"
 					type="email"
 					placeholder="Your email"
+					required
+					maxLength={500}
 				></input>
 				<textarea
 					className="h-52 my-3 rounded-lg p-4 borderBlack"
 					placeholder="Your message"
+					required
+					maxLength={900}
 				/>
 				<button
 					type="submit"
