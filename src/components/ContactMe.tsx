@@ -4,9 +4,22 @@ import SectionHeading from "@/components/SectionHeading";
 import { useSectionInView } from "@/lib/hooks";
 import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { sendEmail } from "@/actions/sendEmail";
 
 export default function ContactMe() {
 	const { ref } = useSectionInView("Contact", 0.85);
+
+	const handleSubmit = async (event: {
+		preventDefault: () => void;
+		target: HTMLFormElement | undefined;
+	}) => {
+		event.preventDefault(); // Prevent default form submission
+		const formData = new FormData(event.target);
+
+		await sendEmail(formData); // Explicitly call server action
+		console.log("Form submitted successfully");
+	};
+
 	return (
 		<motion.section
 			ref={ref}
@@ -31,9 +44,16 @@ export default function ContactMe() {
 				</a>{" "}
 				or through this form.
 			</p>
-			<form className="flex flex-col mt-10">
+			<form
+				className="flex flex-col mt-10"
+				action={async (formData) => {
+					console.log("in lcient");
+					await sendEmail(formData);
+				}}
+			>
 				<input
 					className="h-14 rounded-lg borderBlack px-4"
+					name="senderEmail"
 					type="email"
 					placeholder="Your email"
 					required
@@ -41,6 +61,7 @@ export default function ContactMe() {
 				></input>
 				<textarea
 					className="h-52 my-3 rounded-lg p-4 borderBlack"
+					name="message"
 					placeholder="Your message"
 					required
 					maxLength={900}
