@@ -9,17 +9,6 @@ import { sendEmail } from "@/actions/sendEmail";
 export default function ContactMe() {
 	const { ref } = useSectionInView("Contact", 0.85);
 
-	const handleSubmit = async (event: {
-		preventDefault: () => void;
-		target: HTMLFormElement | undefined;
-	}) => {
-		event.preventDefault(); // Prevent default form submission
-		const formData = new FormData(event.target);
-
-		await sendEmail(formData); // Explicitly call server action
-		console.log("Form submitted successfully");
-	};
-
 	return (
 		<motion.section
 			ref={ref}
@@ -47,7 +36,6 @@ export default function ContactMe() {
 			<form
 				className="flex flex-col mt-10"
 				action={async (formData) => {
-					console.log("in lcient");
 					await sendEmail(formData);
 				}}
 			>
