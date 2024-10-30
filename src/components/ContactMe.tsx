@@ -52,11 +52,11 @@ export default function ContactMe() {
 					name="message"
 					placeholder="Your message"
 					required
-					maxLength={900}
+					maxLength={5000}
 				/>
 				<button
 					type="submit"
-					className=" group flex items-center justify-center gap-2 h-[3rem] w-[8rem] p-2 border-2 rounded-full outline-none bg-gray-900 transition-all focus:scale-110 hover:scale-110 active:scale-105 hover:text-sky-600"
+					className=" group flex items-center justify-center gap-2 h-[3rem] w-[8rem] p-2 border-2 rounded-full outline-none bg-gray-900 transition-all text-white focus:scale-110 hover:scale-110 active:scale-105 hover:text-sky-600"
 				>
 					Submit{" "}
 					<FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
