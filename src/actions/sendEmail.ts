@@ -16,7 +16,7 @@ const validateString = (value: unknown, maxLength: number) => {
 	}
 	// This is my issue.
 	if (!value || typeof value !== "string" || value.length > maxLength) {
-		console.log("VALUES is BAD");
+		// console.log("VALUES is BAD");
 		return false;
 	}
 	let val = "";
@@ -31,7 +31,7 @@ export const sendEmail = async (formData: FormData) => {
 	console.log("on server");
 	const message = formData.get("message") || "invalid message";
 	const senderEmail = formData.get("senderEmail");
-	console.log(message, senderEmail);
+	// console.log(message, senderEmail);
 
 	if (!validateString(message, 5000)) {
 		return {
@@ -49,6 +49,7 @@ export const sendEmail = async (formData: FormData) => {
 		from: `onboarding@resend.dev`,
 		to: ["erickjwatanabe@gmail.com"],
 		subject: "MessAGE from portfolio page",
-		text: `${message}`,
+		text: message as string,
+		replyTo: senderEmail as string,
 	});
 };
