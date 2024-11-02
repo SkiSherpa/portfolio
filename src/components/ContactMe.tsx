@@ -2,15 +2,16 @@
 import React from "react";
 import SectionHeading from "@/components/SectionHeading";
 import { useSectionInView } from "@/lib/hooks";
-import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { sendEmail } from "@/actions/sendEmail";
 import { useFormStatus } from "react-dom";
 import SubmitButton from "./SubmitButton";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactMe() {
 	const { ref } = useSectionInView("Contact", 0.85);
 	const { pending } = useFormStatus();
+
 	return (
 		<motion.section
 			ref={ref}
@@ -38,7 +39,13 @@ export default function ContactMe() {
 			<form
 				className="flex flex-col mt-10"
 				action={async (formData) => {
-					await sendEmail(formData);
+					const { data, error } = await sendEmail(formData);
+
+					if (error) {
+						toast.error(error);
+						return;
+					}
+					toast.success("Email sent!");
 				}}
 			>
 				<input
