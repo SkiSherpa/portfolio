@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsSun, BsMoon } from "react-icons/bs";
 
 type Theme = "light" | "dark";
@@ -10,10 +10,24 @@ export default function ThemeSwitch() {
 	const toggleTheme = () => {
 		if (theme === "light") {
 			setTheme("dark");
+			window.localStorage.setItem("theme", "dark"); // this saves it in the local storage.
+			// Only two arguemnts
 		} else {
 			setTheme("light");
+			window.localStorage.setItem("theme", "light");
 		}
 	};
+
+	useEffect(() => {
+		// only a single argument. will return null if key does not exist.
+		const localTheme = window.localStorage.getItem("theme") as Theme | null; // only a single argument. will return null if key does not exist.
+
+		if (localTheme) {
+			setTheme(localTheme); // set theme to what localTheme retrieved from localStorage
+		} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			setTheme("dark");
+		}
+	}, []);
 	return (
 		<button
 			className="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] borderBlack border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all"
