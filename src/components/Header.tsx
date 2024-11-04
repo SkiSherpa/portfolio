@@ -13,7 +13,7 @@ export default function Header() {
 	return (
 		<header className="z-[999] relative flex justify-center">
 			<motion.div
-				className="fixed top-0 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
+				className="fixed top-0 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-900 dark:border-black/40 bark:bg-opacity-75"
 				initial={{ y: -100, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 			></motion.div>
@@ -33,14 +33,17 @@ export default function Header() {
 									setTimeOfLastClick(Date.now());
 								}}
 								className={cn(
-									"flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition",
-									{ "text-gray-950": activeSection === link.name }
+									"flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300",
+									{
+										"text-gray-950 dark:text-gray-100":
+											activeSection === link.name,
+									}
 								)}
 							>
 								{link.name}
 								{link.name === activeSection && (
 									<motion.span
-										className="bg-blue-100 rounded-full absolute inset-0 -z-10"
+										className="bg-blue-100 rounded-full absolute inset-0 -z-10 dark:bg-zinc-800"
 										layoutId="activeSection"
 										transition={{
 											type: "spring",
