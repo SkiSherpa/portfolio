@@ -66,7 +66,7 @@ export default function Intro() {
 					<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
 				</Link>
 				<a
-					className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 active:scale-105 hover:border-sky-600 hover:text-sky-600 transition cursor-pointer"
+					className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 active:scale-105 hover:border-sky-600 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
 					href="/ErickWatanabeResume.pdf"
 					download={true}
 				>
@@ -77,7 +77,7 @@ export default function Intro() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-110 hover:border hover:border-sky-600 transition cursor-pointer" />
+					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-110 hover:border hover:border-sky-600 transition cursor-pointer dark:text-zinc-200" />
 				</a>
 				<a
 					href="https://github.com/SkiSherpa"
