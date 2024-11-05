@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { BsSun, BsMoon } from "react-icons/bs";
-import { useActiveSectionContext } from "@/context/ActiveSectionContext";
+import { useThemeSwitchContext } from "@/context/ThemeSwitchContext";
 
 export default function ThemeSwitch() {
-	const { theme, setTheme } = useActiveSectionContext();
+	const { theme, setTheme } = useThemeSwitchContext();
 
 	return (
 		<button

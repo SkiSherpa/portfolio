@@ -9,11 +9,11 @@ import {
 import "react-vertical-timeline-component/style.min.css"; // import statement from docs
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/ActiveSectionContext";
+import { useThemeSwitchContext } from "@/context/ThemeSwitchContext";
 
 export default function Experience() {
 	const { ref, inView } = useSectionInView("Experience", 0.25);
-	const { theme } = useActiveSectionContext();
+	const { theme } = useThemeSwitchContext();
 
 	return (
 		<section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
