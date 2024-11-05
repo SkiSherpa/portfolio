@@ -23,12 +23,12 @@ export default function Experience() {
 					<React.Fragment key={index}>
 						<VerticalTimelineElement
 							contentStyle={{
-								background: theme === "light" ? "#f3f4f6" : "#27272a",
+								background: theme === "light" ? "#f3f4f6" : "#1f2937",
 								boxShadow: "none",
 								border:
 									theme === "light"
 										? "1px solid rgba(0,0,0, 0.05)"
-										: "1px solid #e4e4e7",
+										: "1px solid rgba(228, 228, 231, 0.05)",
 								textAlign: "left",
 								padding: "1.3rem 2rem",
 							}}
@@ -48,7 +48,7 @@ export default function Experience() {
 						>
 							<h3 className="font-semibold capitalize">{exp.title}</h3>
 							<h4 className="font-normal !mt-0">{exp.location}</h4>
-							<p className="font-normal !mt-0 text-gray-700 dark:text-zinc-200">
+							<p className="font-normal !mt-2 text-gray-700 dark:text-zinc-200">
 								{exp.description}
 							</p>
 						</VerticalTimelineElement>
