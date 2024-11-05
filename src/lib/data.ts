@@ -1,5 +1,4 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
 import { FaReact, FaRegSnowflake } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import { PiExam } from "react-icons/pi";
@@ -58,7 +57,7 @@ export const experiencesData = [
 	},
 	{
 		title: "Graduate Teaching Assistant",
-		location: "Los Angeles, CA",
+		location: "Long Beach, CA",
 		description:
 			"Directed meetings for the Teaching Associates in the Introduction to the Physical Sciences course to instruct teaching assistants on how to conduct their lab sections.",
 		icon: React.createElement(LuGraduationCap),
