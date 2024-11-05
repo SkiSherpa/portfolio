@@ -27,7 +27,7 @@ export default function ContactMe() {
 		>
 			<SectionHeading>Contact me</SectionHeading>
 
-			<p className="text-gray-700 -mt-6">
+			<p className="text-gray-700 -mt-6 dark:text-zinc-200">
 				Please contact me directly at{" "}
 				<a className="underline" href="erickjwatanabe@gmail.com">
 					erickjwatanabe@gmail.com
@@ -47,7 +47,7 @@ export default function ContactMe() {
 				}}
 			>
 				<input
-					className="h-14 rounded-lg borderBlack px-4"
+					className="h-14 rounded-lg borderBlack px-4 dark:bg-zinc-100 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:text-zinc-900 placeholder-gray-400 dark:placeholder-slate-900"
 					name="senderEmail"
 					type="email"
 					placeholder="Your email"
@@ -55,7 +55,7 @@ export default function ContactMe() {
 					maxLength={500}
 				></input>
 				<textarea
-					className="h-52 my-3 rounded-lg p-4 borderBlack"
+					className="h-52 my-3 rounded-lg p-4 borderBlack dark:bg-zinc-100 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:text-zinc-900 placeholder-gray-400 dark:placeholder-slate-900"
 					name="message"
 					placeholder="Your message"
 					required
