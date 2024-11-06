@@ -29,11 +29,11 @@ export default function AboutMe() {
 				<span className="font-medium">flow</span> of coding and revel in solving
 				problems that come with creating applications. My core stack is{" "}
 				<span className="font-medium">
-					React, Next.js, JavaScript, TypeScript, Python 3
+					React, Next.js, JavaScript, TypeScript, Tailwind, Python 3
 				</span>
 				, and <span className="font-medium">MongoDB</span>. I am also familiar
-				with TypeScript, Tailwind, PostgreSQL, and Firebase. I am always looking
-				to learn new technologies. I am currently looking for a{" "}
+				with Framer Motion, PostgreSQL, Firebase, FastAPI, and Django. I am
+				always looking to learn new technologies. I am currently looking for a{" "}
 				<span className="font-medium">full-stack position</span> as a software
 				Engineer.
 			</p>
