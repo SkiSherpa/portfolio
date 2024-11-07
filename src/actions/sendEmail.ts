@@ -20,9 +20,9 @@ export const sendEmail = async (formData: FormData) => {
 			error: "Invalid senderEmail",
 		};
 	}
-	let data;
+
 	try {
-		data = await sendgrid.send({
+		await sendgrid.send({
 			from: `erickjwatanabe@gmail.com`,
 			to: "erickjwatanabe@gmail.com",
 			subject: "Message from portfolio page",
