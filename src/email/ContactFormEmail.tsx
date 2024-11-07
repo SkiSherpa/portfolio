@@ -23,23 +23,14 @@ export default function ContactFormEmail({
 	senderEmail,
 }: ContactFormEmailProps) {
 	return (
-		<Html>
-			<Head />
-			<Preview>New message from your portfolio site</Preview>
-			<Tailwind>
-				<Body className="bg-gray-200">
-					<Container>
-						<Section className="bg-white borderBlack my-10 px-10 rounded-md">
-							<Heading className="leading-tight">
-								You recieved the following message from your contact formd
-							</Heading>
-							<Text>{message}</Text>
-							<Hr />
-							<Text>Email sent from: {senderEmail} </Text>
-						</Section>
-					</Container>
-				</Body>
-			</Tailwind>
-		</Html>
+		<div>
+			<h3>New message from portfolio</h3>
+			<p>
+				<strong>Message:</strong> {message}
+			</p>
+			<p>
+				<strong>From:</strong> {senderEmail}
+			</p>
+		</div>
 	);
 }
