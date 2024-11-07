@@ -28,14 +28,18 @@ export const sendEmail = async (formData: FormData) => {
 		data = await sendgrid.send({
 			from: `erickjwatanabe@gmail.com`,
 			to: "erickjwatanabe@gmail.com",
-			subject: "MessAGE from portfolio page",
-			text: "message as string",
-			// replyTo: senderEmail as string,
+			subject: "Message from portfolio page",
+			text: message as string,
+			replyTo: senderEmail as string,
 			// react: React.createElement(ContactFormEmail, {
 			// 	message: message as string,
 			// 	senderEmail: senderEmail as string,
 			// }),
-			html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+			html: `
+				<h3>New message from your portfolio site</h3>
+				<p><strong>Message:</strong> ${message}</p>
+				<p><strong>From:</strong> ${senderEmail}</p>
+			`,
 		});
 	} catch (error: unknown) {
 		console.log("theres an error");
