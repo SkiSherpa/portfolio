@@ -1,11 +1,11 @@
 "use server";
 
-import { Resend } from "resend";
+import sendgrid from "@sendgrid/mail";
 import { validateString, getErrorMessage } from "@/lib/utils";
 import React from "react";
 import ContactFormEmail from "@/email/ContactFormEmail";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 export const sendEmail = async (formData: FormData) => {
 	const message = formData.get("message") || "invalid message";
@@ -25,24 +25,31 @@ export const sendEmail = async (formData: FormData) => {
 	let data;
 	try {
 		// throw { message: 23 };
-		data = await resend.emails.send({
-			from: `onboarding@resend.ddd`,
-			to: ["erickjwatanabe@gmail.com"],
+		data = await sendgrid.send({
+			from: `erickjwatanabe@gmail.com`,
+			to: "erickjwatanabe@gmail.com",
 			subject: "MessAGE from portfolio page",
-			text: message as string,
-			replyTo: senderEmail as string,
-			react: React.createElement(ContactFormEmail, {
-				message: message as string,
-				senderEmail: senderEmail as string,
-			}),
+			text: "message as string",
+			// replyTo: senderEmail as string,
+			// react: React.createElement(ContactFormEmail, {
+			// 	message: message as string,
+			// 	senderEmail: senderEmail as string,
+			// }),
+			html: "<strong>and easy to do anywhere, even with Node.js</strong>",
 		});
 	} catch (error: unknown) {
+		console.log("theres an error");
+		console.error(error);
 		return {
 			error: getErrorMessage(error),
 		};
 	}
 
+	// return {
+	// 	data,
+	// };
 	return {
-		data,
+		success: true,
+		message: "Email sent successfully!",
 	};
 };
