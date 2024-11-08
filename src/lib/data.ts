@@ -80,6 +80,7 @@ export const projectsData = [
 			"As a full-stack engineer contractor I helped develop a platform allows coaches to design and manage their own websites, accessible on both desktop and mobile devices.",
 		tags: ["Next.js", "React", "Tailwind", "Firebase"],
 		imageUrl: "/ValterTennis.png",
+		url: "https://www.valtertennis.com/",
 	},
 	{
 		title: "Animos",
@@ -87,13 +88,15 @@ export const projectsData = [
 			"Developed a single-page application enabling users to create, browse, and attend pet-friendly events. I implemented key features including event creation and listing functionality.",
 		tags: ["React", "FastAPI", "JavaScript", "Python 3", "Redux", "MongoDB"],
 		imageUrl: "/AnimosHomePage.png",
+		url: "https://gitlab.com/SkiSherpa/animos",
 	},
 	{
 		title: "DealerSys",
 		description:
-			"A single-page application that keeps track of a car dealership’s inventory, sales, and services.",
+			"A single-page application that keeps track of a car dealership's inventory, sales, and services.",
 		tags: ["React", "Django 4", "PostgreSQL", "Python 3"],
 		imageUrl: "/DealerSysLight.png",
+		url: "https://gitlab.com/SkiSherpa/dealersys",
 	},
 ] as const;
 
