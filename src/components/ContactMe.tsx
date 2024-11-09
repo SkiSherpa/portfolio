@@ -35,7 +35,7 @@ export default function ContactMe() {
 				or through this form.
 			</p>
 			<form
-				className="flex flex-col mt-10"
+				className="flex flex-col mt-10 ml-2 mr-2 sm:ml-0 sm:mr-0"
 				action={async (formData) => {
 					const { error } = await sendEmail(formData);
 
