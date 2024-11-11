@@ -7,9 +7,9 @@ export default function Footer() {
 				&copy; 2024 Erick Watanabe. All rights reserved.
 			</small>
 			<p className="text-sm">
-				<span className="semi-bold">About this webiste:</span> built with React&
-				Next.js (App Router & Server Actions), TypeScript, Tailwind CSS, Framer
-				Motion, React Email & Resend, Vercel hosting.
+				<span className="semi-bold">About this webiste:</span> built with React
+				& Next.js (App Router & Server Actions), TypeScript, Tailwind CSS,
+				Framer Motion, SendGrid, Vercel hosting.
 			</p>
 		</footer>
 	);
