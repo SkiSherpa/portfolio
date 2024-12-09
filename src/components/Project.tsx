@@ -48,27 +48,44 @@ export default function Project({
 						))}
 					</ul>
 				</div>
-				<a href={url} target="_blank" rel="noopener noreferrer">
-					<Image
-						src={imageUrl}
-						alt="Project I worked on"
-						width={452}
-						height={300}
-						quality={95}
-						className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
+				{/* Mobile Image */}
+				<div className="block sm:hidden">
+					<a href={url} target="_blank" rel="noopener noreferrer">
+						<Image
+							src={imageUrl}
+							alt={`${title} project`}
+							width={452}
+							height={300}
+							quality={95}
+							className="w-full rounded-b-lg"
+						/>
+					</a>
+				</div>
 
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
+				{/* Desktop Image with Effects */}
+				<div className="hidden sm:block">
+					<a href={url} target="_blank" rel="noopener noreferrer">
+						<Image
+							src={imageUrl}
+							alt={`${title} project`}
+							width={452}
+							height={300}
+							quality={95}
+							className="absolute top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
+            transition
+            group-hover:scale-[1.04]
+            group-hover:-translate-x-3
+            group-hover:translate-y-3
+            group-hover:-rotate-2
 
-        group-even:right-[initial] group-even:-left-40"
-					/>
-				</a>
+            group-even:group-hover:translate-x-3
+            group-even:group-hover:translate-y-3
+            group-even:group-hover:rotate-2
+
+            group-even:right-[initial] group-even:-left-40"
+						/>
+					</a>
+				</div>
 			</section>
 		</motion.div>
 	);
