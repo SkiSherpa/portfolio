@@ -22,12 +22,11 @@ export default function AboutMe() {
 				<span className="font-medium">Software Engineer</span>. After 12 years
 				of teaching I wanted a change. I enrolled in a coding bootcamp and
 				learned <span className="font-medium">full-stack web development</span>.{" "}
-				My <span className="italic">favorite</span> part of{" "}
-				<span className="italic">programming</span> is the building applications
-				and the problem-solving aspect. I{" "}
-				<span className="underline">love</span> falling into the the{" "}
-				<span className="font-medium">flow</span> of coding and revel in solving
-				problems that come with creating applications. My core stack is{" "}
+				I <span className="underline">love</span> falling into the the{" "}
+				<span className="font-medium">flow</span> of coding and{" "}
+				<span className="italic">revel</span> in{" "}
+				<span className="italic">solving problems</span> that come with creating
+				applications. My core stack is{" "}
 				<span className="font-medium">
 					React, Next.js, JavaScript, TypeScript, Tailwind, Python 3
 				</span>
