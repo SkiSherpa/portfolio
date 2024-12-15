@@ -17,25 +17,36 @@ export default function AboutMe() {
 			id="about"
 		>
 			<SectionHeading>About me</SectionHeading>
-			<p className="mb-3 p-2">
-				A <span className="font-medium">Physics Professor</span> turned{" "}
-				<span className="font-medium">Software Engineer</span>. After 12 years
-				of teaching I wanted a change. I enrolled in a coding bootcamp and
-				learned <span className="font-medium">full-stack web development</span>.{" "}
-				I <span className="underline">love</span> falling into the the{" "}
-				<span className="font-medium">flow</span> of coding and{" "}
-				<span className="italic">revel</span> in{" "}
-				<span className="italic">solving problems</span> that come with creating
-				applications. My core stack is{" "}
-				<span className="font-medium">
-					React, Next.js, JavaScript, TypeScript, Tailwind, Python 3
-				</span>
-				, and <span className="font-medium">MongoDB</span>. I am also familiar
-				with Framer Motion, PostgreSQL, Firebase, FastAPI, and Django. I am
-				always looking to learn new technologies. I am currently looking for a{" "}
-				<span className="font-medium">full-stack position</span> as a software
-				Engineer.
-			</p>
+			<div>
+				<p className="mb-3 p-2">
+					Physics Lecturer turned Software Engineer. After my Master’s and three
+					years as a Visiting Assistant Professor at LMU, I enrolled in and
+					graduated from a coding bootcamp. In both my experimental physics
+					research and teaching, I’ve always been passionate about solving
+					complex problems, and I’ve grown to love the challenge and beauty in
+					building software applications.
+				</p>
+
+				<p className="mb-3 p-2">
+					Since graduating, I have spent the last year as a Full-Stack
+					Engineering Contractor. I am currently working on a tennis coaching
+					platform, Valter Pavia Tennis Academy, where I have improved site UX
+					and flow, made SEO changes that have resulted in 85% growth in traffic
+					from Google searches, and am currently implementing features to
+					digitize various of the company’s business functions.
+				</p>
+
+				<p className="mb-3 p-2">
+					I am most experienced in React, Next.js, JavaScript, TypeScript,
+					Tailwind, Python, and MongoDB. I am also familiar with Framer Motion,
+					PostgreSQL, Firebase, FastAPI, and Django.
+				</p>
+
+				<p className="mb-3 p-2">
+					I am currently looking for a full-stack position as a Software
+					Engineer.
+				</p>
+			</div>
 		</motion.section>
 	);
 }

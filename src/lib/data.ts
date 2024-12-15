@@ -77,7 +77,7 @@ export const projectsData = [
 	{
 		title: "Valter Pavia Tennis Academy",
 		description:
-			"As a full-stack engineer contractor I helped develop a platform allows coaches to design and manage their own websites, accessible on both desktop and mobile devices.",
+			"Am currently designing implementing features to digitized various of the company’s business functions",
 		tags: ["Next.js", "React", "Tailwind", "Firebase"],
 		imageUrl: "/ValterTennis.png",
 		url: "https://www.valtertennis.com/",

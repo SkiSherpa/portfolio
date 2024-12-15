@@ -70,7 +70,7 @@ export default function Intro() {
 					href="/ErickWatanabeResume.pdf"
 					download={true}
 				>
-					Download CV <HiDownload />
+					Download Resume <HiDownload />
 				</a>
 				<a
 					href="https://www.linkedin.com/in/erick-watanabe/"
