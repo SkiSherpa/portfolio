@@ -2,6 +2,7 @@ import React from "react";
 import { FaReact, FaRegSnowflake } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import { PiExam } from "react-icons/pi";
+import { GiLaserWarning } from "react-icons/gi";
 
 export const links = [
 	{
@@ -71,6 +72,14 @@ export const experiencesData = [
 		icon: React.createElement(FaRegSnowflake),
 		date: "2011 - 2013",
 	},
+	{
+		title: "Optical Researcher",
+		location: "Merced, CA",
+		description:
+			"Worked alongside Dr. Sharping in experimental physics research related to chromatic dispersion and ultrafast pulses of light. I served both as a general researcher, and also developed a new ultrafast laser focusing method",
+		icon: React.createElement(GiLaserWarning),
+		date: "2010 - 2011",
+	},
 ] as const;
 
 export const projectsData = [
@@ -93,7 +102,7 @@ export const projectsData = [
 	{
 		title: "DealerSys",
 		description:
-			"A single-page application that keeps track of a car dealership's inventory, sales, and services.",
+			"Worked alongside Dr. Sharping in experimental physics research related to chromatic dispersion and ultrafast pulses of light. I served both as a general researcher, and also developed a new ultrafast laser focusing method",
 		tags: ["React", "Django 4", "PostgreSQL", "Python 3"],
 		imageUrl: "/DealerSysLight.png",
 		url: "https://gitlab.com/SkiSherpa/dealersys",

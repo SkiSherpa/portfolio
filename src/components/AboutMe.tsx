@@ -20,11 +20,11 @@ export default function AboutMe() {
 			<div>
 				<p className="mb-3 p-2">
 					Physics Lecturer turned Software Engineer. After my Master’s and three
-					years as a Visiting Assistant Professor at LMU, I enrolled in and
-					graduated from a coding bootcamp. In both my experimental physics
-					research and teaching, I’ve always been passionate about solving
-					complex problems, and I’ve grown to love the challenge and beauty in
-					building software applications.
+					years as a Visiting Assistant Professor at Loyola Marymount
+					University, I enrolled in and graduated from a coding bootcamp. In
+					both my experimental physics research and teaching, I’ve always been
+					passionate about solving complex problems, and I’ve grown to love the
+					challenge and beauty in building software applications.
 				</p>
 
 				<p className="mb-3 p-2">
