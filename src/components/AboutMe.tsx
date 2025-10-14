@@ -19,27 +19,35 @@ export default function AboutMe() {
 			<SectionHeading>About me</SectionHeading>
 			<div>
 				<p className="mb-3 p-2">
-					Physics Lecturer turned Software Engineer. After my Master’s and three
-					years as a Visiting Assistant Professor at Loyola Marymount
-					University, I enrolled in and graduated from a coding bootcamp. In
-					both my experimental physics research and teaching, I’ve always been
-					passionate about solving complex problems, and I’ve grown to love the
-					challenge and beauty in building software applications.
+					I'm a Full-Stack Engineer at Blue Marble Space Institute of Science,
+					where I build AI-powered data curation tools for NASA. My work focuses
+					on integrating LLM models into scientific workflows, developing RAG
+					pipelines, and creating modern web applications with React, Next.js,
+					and FastAPI.
 				</p>
 
 				<p className="mb-3 p-2">
-					Since graduating, I have spent the last year as a Full-Stack
-					Engineering Contractor. I am currently working on a tennis coaching
-					platform, Valter Pavia Tennis Academy, where I have improved site UX
-					and flow, made SEO changes that have resulted in 85% growth in traffic
-					from Google searches, and am currently implementing features to
-					digitize various of the company’s business functions.
+					My path to software engineering is unconventional. I spent years as a
+					physicist and university professor before discovering my passion for
+					building software. This background gives me a unique perspective: I
+					bring scientific rigor to problem-solving while creating intuitive,
+					accessible applications that bridge complex technical systems with
+					user needs
+				</p>
+
+				<p className="mb-3 p-2">
+					I specialize in full-stack development with a focus on AI/ML
+					integration, building everything from responsive React frontends to
+					FastAPI backends that leverage vector databases and LLM APIs. I'm
+					particularly energized by projects that combine cutting-edge
+					technology with meaningful impact, like making NASA's scientific data
+					more discoverable and accessible.
 				</p>
 
 				<p className="mb-3 p-2">
 					I am most experienced in React, Next.js, JavaScript, TypeScript,
-					Tailwind, Python, and MongoDB. I am also familiar with Framer Motion,
-					PostgreSQL, Firebase, FastAPI, and Django.
+					Tailwind, Python, and MongoDB. I am also familiar with Vite, Framer
+					Motion, PostgreSQL, Firebase, FastAPI, and Django.
 				</p>
 
 				<p className="mb-3 p-2">
