@@ -52,7 +52,7 @@ export default function AboutMe() {
 
 				<p className="mb-3 p-2">
 					I am currently looking for a full-stack position as a Software
-					Engineer.
+					Engineer!
 				</p>
 			</div>
 		</motion.section>
