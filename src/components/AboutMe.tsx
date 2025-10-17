@@ -19,11 +19,11 @@ export default function AboutMe() {
 			<SectionHeading>About me</SectionHeading>
 			<div>
 				<p className="mb-3 p-2">
-					I'm a Full-Stack Engineer at Blue Marble Space Institute of Science,
-					where I build AI-powered data curation tools for NASA. My work focuses
-					on integrating LLM models into scientific workflows, developing RAG
-					pipelines, and creating modern web applications with React, Next.js,
-					and FastAPI.
+					I&apos;m a Full-Stack Engineer at Blue Marble Space Institute of
+					Science, where I build AI-powered data curation tools for NASA. My
+					work focuses on integrating LLM models into scientific workflows,
+					developing RAG pipelines, and creating modern web applications with
+					React, Next.js, and FastAPI.
 				</p>
 
 				<p className="mb-3 p-2">
@@ -38,10 +38,10 @@ export default function AboutMe() {
 				<p className="mb-3 p-2">
 					I specialize in full-stack development with a focus on AI/ML
 					integration, building everything from responsive React frontends to
-					FastAPI backends that leverage vector databases and LLM APIs. I'm
+					FastAPI backends that leverage vector databases and LLM APIs. I&apos;m
 					particularly energized by projects that combine cutting-edge
-					technology with meaningful impact, like making NASA's scientific data
-					more discoverable and accessible.
+					technology with meaningful impact, like making NASA&apos;s scientific
+					data more discoverable and accessible.
 				</p>
 
 				<p className="mb-3 p-2">
