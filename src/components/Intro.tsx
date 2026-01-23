@@ -43,8 +43,9 @@ export default function Intro() {
 			>
 				<span className="font-bold">Hello, I&apos;m Erick Watanabe.</span>{" "}
 				I&apos;m a <span className="font-bold">full-stack developer</span> with{" "}
-				<span className="font-bold">two years</span> of experience. I enjoy
-				building <span className="italic">sites & apps</span>. My focus is{" "}
+				<span className="font-bold">three years</span> of experience. I enjoy
+				building <span className="underline">accessible</span>{" "}
+				<span className="italic">sites & apps</span>. My focus is{" "}
 				<span className="underline">React</span> and{" "}
 				<span className="underline">Next.js</span>.
 			</motion.h1>
