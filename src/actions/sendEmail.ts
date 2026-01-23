@@ -1,9 +1,9 @@
 "use server";
 
-import sendgrid from "@sendgrid/mail";
+import { Resend } from "resend";
 import { validateString, getErrorMessage } from "@/lib/utils";
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
+const resend = new Resend(process.env.RESEND_API_KEY as string);
 
 export const sendEmail = async (formData: FormData) => {
 	const message = formData.get("message") || "invalid message";
@@ -22,11 +22,10 @@ export const sendEmail = async (formData: FormData) => {
 	}
 
 	try {
-		await sendgrid.send({
-			from: `erickjwatanabe@gmail.com`,
+		await resend.emails.send({
+			from: "onboarding@resend.dev", // Resend's test email for development
 			to: "erickjwatanabe@gmail.com",
 			subject: "Message from portfolio page",
-			text: message as string,
 			replyTo: senderEmail as string,
 			html: `
 				<h3>New message from your portfolio site</h3>
