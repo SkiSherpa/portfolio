@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
 	title: "Erick Watanabe | Portfolio",
 	description:
-		"Erick Watanabe is a full-stack developer with two years of experience",
+		"Erick Watanabe is a full-stack developer with three years of experience",
 };
 
 export default function RootLayout({
