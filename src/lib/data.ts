@@ -84,9 +84,25 @@ export const experiencesData = [
 
 export const projectsData = [
 	{
+		title: "NASA's Space Microbial Culture Collection page",
+		description:
+			"Constructed the SMCC portal page and interactive table for tracking microbial data aboard the ISS.",
+		tags: ["Vite", "React", "TypeScript", "Tailwind", "Django", "Python"],
+		imageUrl: "/smcc_experience.png",
+		url: "https://visualization.osdr.nasa.gov/smcc/",
+	},
+	{
+		title: "NASA's AI Curation Methods Scientific Data",
+		description:
+			"Developed full-stack AI tool that enables NASA scientists to efficiently curate and access data from NASA's OSRD.",
+		tags: ["Next.js", "React", "TypeScript", "Tailwind", "FastAPI", "Python"],
+		imageUrl: "/aicure_full_tool.png",
+		url: "https://github.com/alwalt/AI-Cure",
+	},
+	{
 		title: "Valter Pavia Tennis Academy",
 		description:
-			"Am currently designing implementing features to digitized various of the company’s business functions",
+			"Designed features to digitized various of the company’s business functions",
 		tags: ["Next.js", "React", "Tailwind", "Firebase"],
 		imageUrl: "/ValterTennis.png",
 		url: "https://www.valtertennis.com/",
@@ -102,7 +118,7 @@ export const projectsData = [
 	{
 		title: "DealerSys",
 		description:
-			"Worked alongside Dr. Sharping in experimental physics research related to chromatic dispersion and ultrafast pulses of light. I served both as a general researcher, and also developed a new ultrafast laser focusing method",
+			"Built a single-page application to manage inventory, appointments, and staff for a car dealers ship.",
 		tags: ["React", "Django 4", "PostgreSQL", "Python 3"],
 		imageUrl: "/DealerSysLight.png",
 		url: "https://gitlab.com/SkiSherpa/dealersys",
