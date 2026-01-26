@@ -47,7 +47,7 @@ export default function Experience() {
 							visible={inView}
 						>
 							<h3 className="font-semibold capitalize">{exp.title}</h3>
-							<h4 className="font-normal !mt-0">{exp.location}</h4>
+							<h4 className="italic !mt-0">{exp.location}</h4>
 							<p className="font-normal !mt-2 text-gray-700 dark:text-zinc-200">
 								{exp.description}
 							</p>
