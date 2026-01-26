@@ -1,5 +1,6 @@
 import React from "react";
 import { FaReact, FaRegSnowflake } from "react-icons/fa";
+import { SiNasa } from "react-icons/si";
 import { LuGraduationCap } from "react-icons/lu";
 import { PiExam } from "react-icons/pi";
 import { GiLaserWarning } from "react-icons/gi";
@@ -33,16 +34,24 @@ export const links = [
 
 export const experiencesData = [
 	{
+		title: "Staff Scientits",
+		location: "Blue Marble Space Institute of Science",
+		description:
+			"Engineered AI-powered data curation tools with RAG pipelines and LLM integrations to help NASA scientists efficiently analyze and transform scientific data. Built NASA's SMCC portal page and interactive table for tracking microbial cultures aboard the ISS.",
+		icon: React.createElement(SiNasa),
+		date: "2025",
+	},
+	{
 		title: "Full-Stack Engineer Contractor",
-		location: "Long Beach, CA",
+		location: "Valter Pavia Tennis Academy",
 		description:
 			"Using Next.js, TypeScript, Tailwind, Firebase, and deployed with Vercel, we built a platform accessible on both desktop and mobile devices. This allows tennis coaches to increase client engagement on their site, manage lesson bookings for both kids and adults, oversee their employees, and handle payments from clients.",
 		icon: React.createElement(FaReact),
-		date: "2024 - present",
+		date: "2024 - 2025",
 	},
 	{
 		title: "Graduated Hack Reactor Bootcamp",
-		location: "Los Angeles, CA",
+		location: "Hack Reactor",
 		description:
 			"After 4 months of intense study, I acquired full-stack skills in creating web applications using the following technologies: React, Django 4, FastAPI, Docker Compose, PostgreSQL, and MongoDB.",
 		icon: React.createElement(LuGraduationCap),
@@ -50,7 +59,7 @@ export const experiencesData = [
 	},
 	{
 		title: "Visiting Assistant Professor of Physics",
-		location: "Los Angeles, CA",
+		location: "Loyola Marmount University",
 		description:
 			"Created synchronous and asynchronous curriculums for Introduction to Mechanics, General Physics I & II, Qualitative Skills in the Modern World, College Algebra, and Pre-Calculus.",
 		icon: React.createElement(PiExam),
@@ -58,7 +67,7 @@ export const experiencesData = [
 	},
 	{
 		title: "Graduate Teaching Assistant",
-		location: "Long Beach, CA",
+		location: "California State University, Long Beach",
 		description:
 			"Directed meetings for the Teaching Associates in the Introduction to the Physical Sciences course to instruct teaching assistants on how to conduct their lab sections.",
 		icon: React.createElement(LuGraduationCap),
@@ -66,15 +75,15 @@ export const experiencesData = [
 	},
 	{
 		title: "Certified PSIA level I Ski Instructor",
-		location: "South Lake Tahoe, CA",
+		location: "Heavenly Mountain Resort",
 		description:
-			"Instructing people of all ages on the basics and advanced mechanics of skiing at Heavenly Ski Resort.",
+			"Instructing people of all ages on the basics and advanced mechanics of skiing at Heavenly Ski Resort in Lake Tahoe.",
 		icon: React.createElement(FaRegSnowflake),
 		date: "2011 - 2013",
 	},
 	{
 		title: "Optical Researcher",
-		location: "Merced, CA",
+		location: "University of California, Merced",
 		description:
 			"Worked alongside Dr. Sharping in experimental physics research related to chromatic dispersion and ultrafast pulses of light. I served both as a general researcher, and also developed a new ultrafast laser focusing method",
 		icon: React.createElement(GiLaserWarning),
@@ -133,6 +142,7 @@ export const skillsData = [
 	"Next.js",
 	"Django",
 	"FastAPI",
+	"Vite",
 	"Git",
 	"Tailwind",
 	"MongoDB",
