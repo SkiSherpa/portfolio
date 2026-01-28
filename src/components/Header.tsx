@@ -24,7 +24,7 @@ export default function Header() {
 							key={link.hash}
 							initial={{ y: -100, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
-							className="h-3/4 flex items-center justify-center"
+							className="h-3/4 flex items-center justify-center relative"
 						>
 							<Link
 								href={link.hash}
@@ -33,11 +33,11 @@ export default function Header() {
 									setTimeOfLastClick(Date.now());
 								}}
 								className={cn(
-									"flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300",
+									"flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300 relative",
 									{
 										"text-gray-950 dark:text-gray-100":
 											activeSection === link.name,
-									}
+									},
 								)}
 							>
 								{link.name}
