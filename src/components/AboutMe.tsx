@@ -45,7 +45,7 @@ export default function AboutMe() {
 				</p>
 
 				<p className="mb-3 p-2">
-					Whether I'm developing accessible React components, designing
+					Whether I&apos;m developing accessible React components, designing
 					user-centered learning platforms, or implementing AI-powered tools, I
 					focus on bridging complex technical systems with human-centered
 					design. I specialize in full-stack development with expertise in
@@ -57,7 +57,7 @@ export default function AboutMe() {
 				<p className="mb-3 p-2">
 					I am most experienced in React, Next.js, JavaScript, TypeScript,
 					Tailwind CSS, Python and have 7 years managing course delivery in
-					Brightspace and Blackboard. I'm also familiar with Framer Motion,
+					Brightspace and Blackboard. I&apos;m also familiar with Framer Motion,
 					PostgreSQL, Firebase, FastAPI, Django, xAPI/SCORM standards, and
 					learning analytics tools
 				</p>
