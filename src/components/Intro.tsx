@@ -42,9 +42,9 @@ export default function Intro() {
 				animate={{ opacity: 1, y: 0 }}
 			>
 				<span className="font-bold">Hello, I&apos;m Erick Watanabe.</span>{" "}
-				I&apos;m a <span className="font-bold">full-stack developer</span> with{" "}
-				<span className="font-bold">three years</span> of experience. I enjoy
-				building <span className="underline">accessible</span>{" "}
+				I&apos;m a <span className="font-bold">full-stack developer</span> and
+				with <span className="font-bold">three years</span> of experience. I
+				enjoy building <span className="underline">accessible</span>{" "}
 				<span className="italic">sites & apps</span>. My focus is{" "}
 				<span className="underline">React</span> and{" "}
 				<span className="underline">Next.js</span>.
@@ -63,7 +63,7 @@ export default function Intro() {
 						setTimeOfLastClick(Date.now());
 					}}
 				>
-					Contact me here
+					Contact me
 					<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
 				</Link>
 				<a
@@ -72,6 +72,15 @@ export default function Intro() {
 					download={true}
 				>
 					Download Resume <HiDownload />
+				</a>
+				<a
+					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
+					href="/courses/AirbagSafetyModule/story.html"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					View eLearning Module{" "}
+					<BsArrowRight className="opacity-70 transition" />
 				</a>
 				<a
 					href="https://www.linkedin.com/in/erick-watanabe/"
