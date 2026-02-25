@@ -13,7 +13,7 @@
         <options>
           <option name="title_enabled" value="true">
             <options>
-              <option name="title_text" value="Erick_Watanabe_airbag_safety_module" />
+              <option name="title_text" value="Erick_Watanabe_airbag_safety_module 2.0" />
             </options>
           </option>
           <option name="logo_enabled" value="false">
@@ -1593,7 +1593,6 @@
             <slidelink slideid="_player.6cxf7DPqAFY.5xE0SoEEG7i" displaytext="Crash Scenario" expand="false" type="slide" />
             <slidelink slideid="_player.6cxf7DPqAFY.5l0XbxkDehK" displaytext="Phys: p explained " expand="false" type="slide" />
             <slidelink slideid="_player.6cxf7DPqAFY.62oKvBKJhET" displaytext="Phys: J explained" expand="false" type="slide" />
-            <slidelink slideid="_player.6cxf7DPqAFY.6oc6V6ywlza" displaytext="J example without airbag/seatbelt" expand="false" type="slide" />
             <slidelink slideid="_player.6cxf7DPqAFY.6iFEHvXq7L0" displaytext="Explore some safety systems" expand="false" type="slide" />
           </links>
         </slidelink>
@@ -1615,6 +1614,12 @@
             <slidelink slideid="_player.6KogjEOiafH.6dIRkWUqCYG" displaytext="What is the safest distance to sit from the steering wheel? You have 3 attempts." expand="false" type="slide" />
             <slidelink slideid="_player.6KogjEOiafH.6UGqi01rQWd" displaytext="A friend tells you they read that the NHTSA recommends sitting at least 10 inches from the steering wheel. They suggest you adjust your seat to that distance. Based on what you&amp;apos;ve learned, would this keep you safe?" expand="false" type="slide" />
             <slidelink slideid="_player.6KogjEOiafH.5mi0HxfxcRP" displaytext="References" expand="false" type="slide" />
+          </links>
+        </slidelink>
+        <slidelink slideid="_player.6AShOETfCge" displaytext="Derive F from J&amp;apos;s" expand="true" type="slide">
+          <links>
+            <slidelink slideid="_player.6AShOETfCge.5lnVludqZo2" displaytext="J example without airbag/seatbelt" expand="false" type="slide" />
+            <slidelink slideid="_player.6AShOETfCge.6chJul41kaU" displaytext="Derivation variable only" expand="false" type="slide" />
           </links>
         </slidelink>
       </links>

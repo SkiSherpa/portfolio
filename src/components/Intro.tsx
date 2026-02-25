@@ -79,8 +79,7 @@ export default function Intro() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					View eLearning Module{" "}
-					<BsArrowRight className="opacity-70 transition" />
+					eLearning Module <BsArrowRight className="opacity-70 transition" />
 				</a>
 				<a
 					href="https://www.linkedin.com/in/erick-watanabe/"
