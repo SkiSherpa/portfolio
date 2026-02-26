@@ -9,6 +9,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { SiGitlab } from "react-icons/si";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/ActiveSectionContext";
+import ResumeDropdown from "@/components/ResumeDropdown";
 
 export default function Intro() {
 	const { ref } = useSectionInView("Home", 0.25);
@@ -50,58 +51,59 @@ export default function Intro() {
 				<span className="underline">Next.js</span>.
 			</motion.h1>
 			<motion.div
-				className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium"
+				className="flex flex-col items-center justify-center gap-4 px-4 text-lg font-medium"
 				initial={{ opacity: 0, y: 100 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ delay: 0.1 }} // have the buttons come in 0.1 sec after intro. it looks cool
+				transition={{ delay: 0.1 }}
 			>
-				<Link
-					href="#contact"
-					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
-					onClick={() => {
-						setActiveSection("Contact");
-						setTimeOfLastClick(Date.now());
-					}}
-				>
-					Contact me
-					<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
-				</Link>
-				<a
-					className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 active:scale-105 hover:border-sky-600 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
-					href="/ErickWatanabeResume.pdf"
-					download={true}
-				>
-					Download Resume <HiDownload />
-				</a>
-				<a
-					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-100 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
-					href="/courses/AirbagSafetyModule/story.html"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					eLearning Module <BsArrowRight className="opacity-70 transition" />
-				</a>
-				<a
-					href="https://www.linkedin.com/in/erick-watanabe/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-110 hover:border hover:border-sky-600 transition cursor-pointer dark:text-zinc-200" />
-				</a>
-				<a
-					href="https://github.com/SkiSherpa"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 hover:border hover:border-sky-600 active:scale-110 transition cursor-pointer" />
-				</a>
-				<a
-					href="https://gitlab.com/SkiSherpa"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-110 transition cursor-pointer" />
-				</a>
+				{/* Top row: text buttons */}
+				<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+					<ResumeDropdown />
+					<Link
+						href="#contact"
+						className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 active:scale-105 hover:border-sky-600 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
+						onClick={() => {
+							setActiveSection("Contact");
+							setTimeOfLastClick(Date.now());
+						}}
+					>
+						Contact me
+						<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
+					</Link>
+					<a
+						className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-100 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
+						href="/courses/AirbagSafetyModule/story.html"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						eLearning Module <BsArrowRight className="opacity-70 transition" />
+					</a>
+				</div>
+
+				{/* Bottom row: icon links */}
+				<div className="flex items-center justify-center gap-4">
+					<a
+						href="https://www.linkedin.com/in/erick-watanabe/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<BsLinkedin className="text-gray-700 rounded-full text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-110 hover:border hover:border-sky-600 transition cursor-pointer dark:text-zinc-200" />
+					</a>
+					<a
+						href="https://github.com/SkiSherpa"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaGithubSquare className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 hover:border hover:border-sky-600 active:scale-110 transition cursor-pointer" />
+					</a>
+					<a
+						href="https://gitlab.com/SkiSherpa"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<SiGitlab className="bg-white text-gray-700 rounded-md text-[2rem] focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-110 transition cursor-pointer" />
+					</a>
+				</div>
 			</motion.div>
 		</section>
 	);
