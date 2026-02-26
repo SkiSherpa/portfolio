@@ -74,7 +74,7 @@ export default function Intro() {
 					Download Resume <HiDownload />
 				</a>
 				<a
-					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
+					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-100 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
 					href="/courses/AirbagSafetyModule/story.html"
 					target="_blank"
 					rel="noopener noreferrer"
