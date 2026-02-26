@@ -58,9 +58,10 @@ export default function Intro() {
 			>
 				{/* Top row: text buttons */}
 				<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+					<ResumeDropdown />
 					<Link
 						href="#contact"
-						className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-110 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
+						className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 active:scale-105 hover:border-sky-600 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
 						onClick={() => {
 							setActiveSection("Contact");
 							setTimeOfLastClick(Date.now());
@@ -69,7 +70,6 @@ export default function Intro() {
 						Contact me
 						<BsArrowRight className="opacticy-70 group:hover:translate-x-1 transition" />
 					</Link>
-					<ResumeDropdown />
 					<a
 						className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-100 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
 						href="/courses/AirbagSafetyModule/story.html"

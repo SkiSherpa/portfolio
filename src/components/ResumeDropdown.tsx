@@ -22,27 +22,27 @@ export default function ResumeDropdown() {
 	return (
 		<div ref={dropdownRef} className="relative w-fit">
 			<button
-				className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 active:scale-105 hover:border-sky-600 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
+				className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-100 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
 				onClick={() => setResumeOpen(!resumeOpen)}
 			>
 				Download Resume <HiDownload />
 			</button>
 
 			{resumeOpen && (
-				<div className="absolute top-full mt-1 -left-[5%] w-[110%] bg-white border-2 border-zinc-800 rounded-3xl overflow-hidden shadow-lg z-10 hover:border-sky-600">
+				<div className="absolute top-full mt-1 -left-[5%] w-[110%] bg-gray-900 border-2 border-white rounded-3xl overflow-hidden shadow-lg z-10">
 					<a
 						href="/ErickWatanabeResume.pdf"
 						download={true}
-						className="flex items-center gap-2 px-7 py-3 hover:bg-sky-50 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
+						className="flex items-center gap-2 px-7 py-3 text-white hover:bg-sky-600 hover:text-white dark:hover:text-white transition cursor-pointer"
 						onClick={() => setResumeOpen(false)}
 					>
 						Software Engineering <HiDownload />
 					</a>
-					<hr className="border-zinc-200" />
+					<hr className="border-zinc-700" />
 					<a
 						href="/ErickWatanabeResumeID.pdf"
 						download={true}
-						className="flex items-center gap-2 px-7 py-3 hover:bg-sky-50 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
+						className="flex items-center gap-2 px-7 py-3 text-white hover:bg-sky-600 hover:text-white dark:hover:text-white transition cursor-pointer"
 						onClick={() => setResumeOpen(false)}
 					>
 						Instructional Design <HiDownload />
