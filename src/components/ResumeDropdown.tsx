@@ -40,7 +40,7 @@ export default function ResumeDropdown() {
 					</a>
 					<hr className="border-zinc-700" />
 					<a
-						href="/ErickWatanabeResumeID.pdf"
+						href="/ErickWatanabeResumeInstructionalDesign.pdf"
 						download={true}
 						className="flex items-center gap-2 px-7 py-3 text-white hover:bg-sky-600 hover:text-white dark:hover:text-white transition cursor-pointer"
 						onClick={() => setResumeOpen(false)}
