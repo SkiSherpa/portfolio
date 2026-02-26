@@ -20,7 +20,7 @@ export default function ResumeDropdown() {
 	}, []);
 
 	return (
-		<div ref={dropdownRef} className="relative w-fit">
+		<div ref={dropdownRef} className="relative w-fit overflow-visible">
 			<button
 				className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full border-2 focus:scale-100 hover:scale-110 hover:bg-sky-600 active:scale-105 transition"
 				onClick={() => setResumeOpen(!resumeOpen)}
@@ -29,7 +29,7 @@ export default function ResumeDropdown() {
 			</button>
 
 			{resumeOpen && (
-				<div className="absolute top-full mt-1 -left-[5%] w-[110%] bg-gray-900 border-2 border-white rounded-3xl overflow-hidden shadow-lg z-10">
+				<div className="absolute top-full mt-1 w-[100%] bg-gray-900 border-2 dark:border-white rounded-3xl overflow-hidden shadow-lg z-10">
 					<a
 						href="/ErickWatanabeResume.pdf"
 						download={true}
