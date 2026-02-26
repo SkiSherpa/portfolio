@@ -20,7 +20,7 @@ export default function ResumeDropdown() {
 	}, []);
 
 	return (
-		<div ref={dropdownRef} className="relative">
+		<div ref={dropdownRef} className="relative w-fit">
 			<button
 				className="bg-white px-7 py-3 flex items-center gap-2 rounded-full border-2 border-zinc-800 focus:scale-110 hover:scale-110 active:scale-105 hover:border-sky-600 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
 				onClick={() => setResumeOpen(!resumeOpen)}
@@ -29,11 +29,11 @@ export default function ResumeDropdown() {
 			</button>
 
 			{resumeOpen && (
-				<div className="absolute top-0 left-0 w-full bg-white border-2 border-zinc-800 rounded-3xl overflow-hidden shadow-lg z-10">
+				<div className="absolute top-full mt-1 -left-[5%] w-[110%] bg-white border-2 border-zinc-800 rounded-3xl overflow-hidden shadow-lg z-10 hover:border-sky-600">
 					<a
 						href="/ErickWatanabeResume.pdf"
 						download={true}
-						className="flex items-center gap-2 px-7 py-3 hover:bg-sky-50 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800"
+						className="flex items-center gap-2 px-7 py-3 hover:bg-sky-50 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
 						onClick={() => setResumeOpen(false)}
 					>
 						Software Engineering <HiDownload />
@@ -42,7 +42,7 @@ export default function ResumeDropdown() {
 					<a
 						href="/ErickWatanabeResumeID.pdf"
 						download={true}
-						className="flex items-center gap-2 px-7 py-3 hover:bg-sky-50 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800"
+						className="flex items-center gap-2 px-7 py-3 hover:bg-sky-50 hover:text-sky-600 transition cursor-pointer dark:text-zinc-800 dark:hover:text-sky-600"
 						onClick={() => setResumeOpen(false)}
 					>
 						Instructional Design <HiDownload />
