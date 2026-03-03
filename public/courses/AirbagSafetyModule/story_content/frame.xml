@@ -13,7 +13,7 @@
         <options>
           <option name="title_enabled" value="true">
             <options>
-              <option name="title_text" value="Erick_Watanabe_airbag_safety_module 2.0" />
+              <option name="title_text" value="Erick_Watanabe_airbag_safety_module 4.0" />
             </options>
           </option>
           <option name="logo_enabled" value="false">
@@ -1591,8 +1591,8 @@
             <slidelink slideid="_player.6cxf7DPqAFY.6rY75r1AwYk" displaytext="Intro Slide" expand="false" type="slide" />
             <slidelink slideid="_player.6cxf7DPqAFY.5m4aiMJ0Mws" displaytext="Module Objectives" expand="false" type="slide" />
             <slidelink slideid="_player.6cxf7DPqAFY.5xE0SoEEG7i" displaytext="Crash Scenario" expand="false" type="slide" />
-            <slidelink slideid="_player.6cxf7DPqAFY.5l0XbxkDehK" displaytext="Phys: p explained " expand="false" type="slide" />
-            <slidelink slideid="_player.6cxf7DPqAFY.62oKvBKJhET" displaytext="Phys: J explained" expand="false" type="slide" />
+            <slidelink slideid="_player.6cxf7DPqAFY.6OUkMUTTlVw" displaytext="Impulse explained" expand="false" type="slide" />
+            <slidelink slideid="_player.6cxf7DPqAFY.5Xaf5iqFkVM" displaytext="J example without airbag/seatbelt" expand="false" type="slide" />
             <slidelink slideid="_player.6cxf7DPqAFY.6iFEHvXq7L0" displaytext="Explore some safety systems" expand="false" type="slide" />
           </links>
         </slidelink>
@@ -1618,7 +1618,6 @@
         </slidelink>
         <slidelink slideid="_player.6AShOETfCge" displaytext="Derive F from J&amp;apos;s" expand="true" type="slide">
           <links>
-            <slidelink slideid="_player.6AShOETfCge.5lnVludqZo2" displaytext="J example without airbag/seatbelt" expand="false" type="slide" />
             <slidelink slideid="_player.6AShOETfCge.6chJul41kaU" displaytext="Derivation variable only" expand="false" type="slide" />
           </links>
         </slidelink>
