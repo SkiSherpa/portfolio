@@ -23,14 +23,14 @@ export default function AboutMe() {
 					and user-centered applications at the intersection of{" "}
 					<strong>software development</strong> and{" "}
 					<strong>learning experience design</strong>. Most recently at Blue
-					Marble Space Institute of Science, I created data curation tools for
+					Marble Space Institute of Science, I created data curation tools for{" "}
 					<strong>NASA</strong>, designing{" "}
 					<strong>
 						<em>intuitive interfaces</em>
 					</strong>{" "}
 					that make complex scientific systems accessible to researchers,
 					integrating LLM models into workflows, and developing modern web
-					applications with <em>React,</em>, <em>Next.js</em>, and{" "}
+					applications with <em>React</em>, <em>Next.js</em>, and{" "}
 					<em>FastAPI</em>.
 				</p>
 
@@ -51,8 +51,11 @@ export default function AboutMe() {
 				</p>
 
 				<p className="mb-3 p-2">
-					Whether I&apos;m developing accessible React components, designing
-					user-centered learning platforms, or{" "}
+					Whether I&apos;m developing{" "}
+					<em>
+						<strong>accessible</strong> React components
+					</em>
+					, designing user-centered <em>learning platforms</em>, or{" "}
 					<strong>implementing AI-powered tools</strong>, I focus on bridging
 					complex technical systems with <em>human-centered design</em>. I
 					specialize in full-stack development with expertise in instructional
