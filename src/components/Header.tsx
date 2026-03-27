@@ -13,7 +13,7 @@ export default function Header() {
 	return (
 		<header className="z-[999] relative flex justify-center">
 			<motion.div
-				className="fixed top-0 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-900 dark:border-black/40 bark:bg-opacity-75"
+				className="fixed top-0 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-900 dark:border-black/40 dark:bg-opacity-75"
 				initial={{ y: -100, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 			></motion.div>
@@ -43,7 +43,7 @@ export default function Header() {
 								{link.name}
 								{link.name === activeSection && (
 									<motion.span
-										className="bg-blue-100 rounded-full absolute inset-0 -z-10 dark:bg-zinc-800"
+										className="bg-blue-100 rounded-full absolute inset-0 -z-10 dark:bg-zinc-800 dark:border-2 dark:border-zinc-200"
 										layoutId="activeSection"
 										transition={{
 											type: "spring",
