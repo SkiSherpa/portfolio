@@ -2,6 +2,8 @@ import React from "react";
 import { FaReact, FaRegSnowflake } from "react-icons/fa";
 import { SiNasa } from "react-icons/si";
 import { LuGraduationCap } from "react-icons/lu";
+
+import { BsChatLeftText } from "react-icons/bs";
 import { PiExam } from "react-icons/pi";
 import { GiLaserWarning } from "react-icons/gi";
 
@@ -33,6 +35,14 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
+	{
+		title: "AI Model Evaluator",
+		location: "Handshake",
+		description:
+			"Evaluate and rank LLM-generated responses across quality dimensions including reasoning, accuracy, and communication, contributing to preference datasets used in model improvement.",
+		icon: React.createElement(BsChatLeftText),
+		date: "2025",
+	},
 	{
 		title: "Staff Scientits",
 		location: "Blue Marble Space Institute of Science",
