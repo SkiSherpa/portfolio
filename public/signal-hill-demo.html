@@ -1,0 +1,1387 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="robots" content="noindex,nofollow" />
+		<title>Signal Hill Interactive Map — Prototype</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+		/>
+		<style>
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				background: #fafaf9;
+				color: #1c1917;
+				padding: 48px 24px 64px;
+			}
+
+			.page {
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+			/* ── Header ── */
+			.header {
+				margin-bottom: 48px;
+			}
+			.header-eyebrow {
+				font-size: 11px;
+				font-weight: 500;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: #a8a29e;
+				margin-bottom: 10px;
+			}
+			.header-title {
+				font-size: 28px;
+				font-weight: 500;
+				color: #1c1917;
+				margin-bottom: 10px;
+			}
+			.header-desc {
+				font-size: 15px;
+				color: #78716c;
+				line-height: 1.6;
+				max-width: 520px;
+			}
+
+			/* ── Section labels ── */
+			.section-label {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				margin-bottom: 16px;
+			}
+			.section-label span {
+				font-size: 11px;
+				font-weight: 500;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: #a8a29e;
+				white-space: nowrap;
+			}
+			.section-label::after {
+				content: "";
+				flex: 1;
+				height: 1px;
+				background: #e7e5e4;
+			}
+
+			/* ── Divider ── */
+			.divider {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+				margin: 48px 0;
+			}
+			.divider::before,
+			.divider::after {
+				content: "";
+				flex: 1;
+				height: 1px;
+				background: #e7e5e4;
+			}
+			.divider span {
+				font-size: 11px;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: #d6d3d1;
+			}
+
+			/* ── Footer note ── */
+			.footer-note {
+				text-align: center;
+				font-size: 12px;
+				color: #d6d3d1;
+				margin-top: 48px;
+			}
+
+			/* ══════════════════════════════════════════
+       DESKTOP MOCKUP
+    ══════════════════════════════════════════ */
+			.desktop-wrap {
+				border-radius: 12px;
+				overflow: hidden;
+				border: 1px solid #e7e5e4;
+				box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+			}
+			.d-app {
+				display: flex;
+				flex-direction: column;
+				background: #fff;
+				height: 500px;
+			}
+
+			.d-toolbar {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				padding: 10px 14px;
+				border-bottom: 0.5px solid #e5e1d8;
+				background: #fff;
+				flex-wrap: wrap;
+			}
+			.d-toolbar-title {
+				font-size: 14px;
+				font-weight: 500;
+				color: #1c1917;
+				margin-right: 8px;
+			}
+
+			.filter-btn {
+				font-size: 12px;
+				padding: 4px 10px;
+				border-radius: 999px;
+				border: 0.5px solid #d6d3ca;
+				background: transparent;
+				color: #78716c;
+				cursor: pointer;
+				transition: all 0.15s;
+			}
+			.filter-btn:hover {
+				background: #f5f2eb;
+			}
+			.filter-btn.active {
+				border-color: transparent;
+				color: #085041;
+				background: #e1f5ee;
+			}
+			.filter-btn.active.oil {
+				color: #633806;
+				background: #faeeda;
+			}
+			.filter-btn.active.park {
+				color: #27500a;
+				background: #eaf3de;
+			}
+			.filter-btn.active.culture {
+				color: #3c3489;
+				background: #eeedfe;
+			}
+			.filter-btn.active.landmark {
+				color: #712b13;
+				background: #faece7;
+			}
+
+			.d-map-row {
+				display: flex;
+				flex: 1;
+				overflow: hidden;
+			}
+
+			.map-area {
+				flex: 1;
+				position: relative;
+				background: #e8e4da;
+				overflow: hidden;
+			}
+			.street {
+				position: absolute;
+				background: #fff;
+			}
+			.street.h {
+				height: 6px;
+				left: 0;
+				right: 0;
+			}
+			.street.v {
+				width: 6px;
+				top: 0;
+				bottom: 0;
+			}
+			.street.major.h {
+				height: 9px;
+				background: #f5c842;
+			}
+			.street.major.v {
+				width: 9px;
+				background: #f5c842;
+			}
+			.block {
+				position: absolute;
+				background: #ddd8ce;
+				border-radius: 2px;
+			}
+
+			.marker {
+				position: absolute;
+				transform: translate(-50%, -100%);
+				cursor: pointer;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				z-index: 2;
+			}
+			.marker-pin {
+				width: 28px;
+				height: 28px;
+				border-radius: 50% 50% 50% 0;
+				transform: rotate(-45deg);
+				border: 2px solid rgba(0, 0, 0, 0.15);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: transform 0.15s;
+			}
+			.marker:hover .marker-pin {
+				transform: rotate(-45deg) scale(1.15);
+			}
+			.marker.active .marker-pin {
+				transform: rotate(-45deg) scale(1.2);
+				box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+			}
+			.marker-icon {
+				transform: rotate(45deg);
+				font-size: 13px;
+				color: #fff;
+			}
+			.marker.historical .marker-pin {
+				background: #1d9e75;
+			}
+			.marker.oil .marker-pin {
+				background: #ba7517;
+			}
+			.marker.park .marker-pin {
+				background: #639922;
+			}
+			.marker.culture .marker-pin {
+				background: #7f77dd;
+			}
+			.marker.landmark .marker-pin {
+				background: #d85a30;
+			}
+			.marker.hidden {
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			/* Desktop detail panel */
+			.d-panel {
+				width: 240px;
+				border-left: 0.5px solid #e5e1d8;
+				display: flex;
+				flex-direction: column;
+				overflow: hidden;
+				background: #fff;
+			}
+			.d-panel-empty {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				gap: 8px;
+				padding: 24px;
+				text-align: center;
+			}
+			.d-panel-empty-icon {
+				font-size: 28px;
+				color: #a8a29e;
+			}
+			.d-panel-empty-text {
+				font-size: 13px;
+				color: #a8a29e;
+				line-height: 1.5;
+			}
+			.d-panel-content {
+				display: none;
+				flex-direction: column;
+				height: 100%;
+			}
+			.d-panel-header {
+				padding: 14px 14px 10px;
+				border-bottom: 0.5px solid #e5e1d8;
+			}
+			.d-panel-close {
+				float: right;
+				background: none;
+				border: none;
+				cursor: pointer;
+				color: #a8a29e;
+				font-size: 16px;
+				padding: 0;
+				margin: -2px -2px 0 0;
+			}
+			.d-panel-close:hover {
+				color: #1c1917;
+			}
+			.d-panel-cat {
+				font-size: 11px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				margin-bottom: 4px;
+			}
+			.d-panel-name {
+				font-size: 15px;
+				font-weight: 500;
+				color: #1c1917;
+				line-height: 1.3;
+			}
+			.d-panel-period {
+				font-size: 11px;
+				color: #a8a29e;
+				margin-top: 3px;
+			}
+			.d-panel-img {
+				width: 100%;
+				height: 110px;
+				background: #f5f2eb;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.d-panel-img-icon {
+				font-size: 28px;
+				color: #a8a29e;
+			}
+			.d-panel-body {
+				padding: 12px 14px;
+				flex: 1;
+				overflow-y: auto;
+			}
+			.d-panel-desc {
+				font-size: 13px;
+				color: #78716c;
+				line-height: 1.6;
+				margin-bottom: 12px;
+			}
+			.d-panel-links {
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+			}
+			.panel-link {
+				font-size: 12px;
+				color: #185fa5;
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				text-decoration: none;
+			}
+			.panel-link:hover {
+				text-decoration: underline;
+			}
+
+			/* Legend */
+			.d-legend {
+				display: flex;
+				gap: 12px;
+				padding: 8px 14px;
+				border-top: 0.5px solid #e5e1d8;
+				flex-wrap: wrap;
+				background: #fff;
+			}
+			.legend-item {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				font-size: 11px;
+				color: #78716c;
+			}
+			.legend-dot {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+			}
+
+			/* Category colors */
+			.cat-historical {
+				color: #085041;
+			}
+			.cat-oil {
+				color: #633806;
+			}
+			.cat-park {
+				color: #27500a;
+			}
+			.cat-culture {
+				color: #3c3489;
+			}
+			.cat-landmark {
+				color: #712b13;
+			}
+
+			/* ══════════════════════════════════════════
+       MOBILE MOCKUP
+    ══════════════════════════════════════════ */
+			.mobile-wrap {
+				display: flex;
+				justify-content: center;
+			}
+
+			.phone {
+				width: 300px;
+				background: #fff;
+				border-radius: 40px;
+				border: 8px solid #1c1917;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+			}
+			.phone-notch {
+				height: 26px;
+				background: #1c1917;
+				border-radius: 0 0 14px 14px;
+				width: 90px;
+				margin: 0 auto;
+				position: relative;
+				z-index: 10;
+			}
+			.status-bar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 5px 14px 3px;
+				font-size: 11px;
+				font-weight: 500;
+				color: #1c1917;
+			}
+			.status-icons {
+				display: flex;
+				gap: 4px;
+				align-items: center;
+			}
+
+			.m-app {
+				display: flex;
+				flex-direction: column;
+				height: 580px;
+				position: relative;
+				overflow: hidden;
+			}
+			.m-toolbar {
+				padding: 7px 11px 5px;
+				border-bottom: 0.5px solid #e5e1d8;
+				background: #fff;
+				z-index: 5;
+			}
+			.m-toolbar-top {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 7px;
+			}
+			.m-toolbar-title {
+				font-size: 14px;
+				font-weight: 500;
+				color: #1c1917;
+			}
+			.m-toolbar-icon {
+				font-size: 17px;
+				color: #78716c;
+			}
+			.m-filter-row {
+				display: flex;
+				gap: 5px;
+				overflow-x: auto;
+				padding-bottom: 2px;
+				scrollbar-width: none;
+			}
+			.m-filter-row::-webkit-scrollbar {
+				display: none;
+			}
+			.m-filter-row .filter-btn {
+				flex-shrink: 0;
+				font-size: 11px;
+				padding: 3px 9px;
+			}
+
+			.m-map-area {
+				flex: 1;
+				position: relative;
+				background: #e8e4da;
+				overflow: hidden;
+			}
+			.m-map-area .street.h {
+				height: 5px;
+			}
+			.m-map-area .street.v {
+				width: 5px;
+			}
+			.m-map-area .street.major.h {
+				height: 8px;
+			}
+			.m-map-area .street.major.v {
+				width: 8px;
+			}
+			.m-map-area .marker-pin {
+				width: 26px;
+				height: 26px;
+			}
+			.m-map-area .marker-icon {
+				font-size: 12px;
+			}
+
+			.legend-float {
+				position: absolute;
+				bottom: 10px;
+				left: 10px;
+				background: #fff;
+				border: 0.5px solid #e5e1d8;
+				border-radius: 8px;
+				padding: 6px 8px;
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+				z-index: 3;
+			}
+			.legend-float .legend-item {
+				font-size: 10px;
+			}
+			.legend-float .legend-dot {
+				width: 8px;
+				height: 8px;
+			}
+
+			/* Bottom sheet */
+			.sheet-backdrop {
+				position: absolute;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.3);
+				z-index: 9;
+				display: none;
+			}
+			.sheet-backdrop.visible {
+				display: block;
+			}
+
+			.bottom-sheet {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: #fff;
+				border-radius: 16px 16px 0 0;
+				border-top: 0.5px solid #e5e1d8;
+				z-index: 10;
+				transform: translateY(100%);
+				transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+			}
+			.bottom-sheet.peek {
+				transform: translateY(calc(100% - 76px));
+			}
+			.bottom-sheet.open {
+				transform: translateY(0);
+			}
+
+			.sheet-handle {
+				display: flex;
+				justify-content: center;
+				padding: 9px 0 3px;
+				cursor: pointer;
+			}
+			.sheet-handle-bar {
+				width: 36px;
+				height: 4px;
+				border-radius: 2px;
+				background: #d6d3ca;
+			}
+			.sheet-peek-content {
+				padding: 0 13px 11px;
+				cursor: pointer;
+			}
+			.sheet-peek-name {
+				font-size: 14px;
+				font-weight: 500;
+				color: #1c1917;
+			}
+			.sheet-peek-sub {
+				font-size: 12px;
+				color: #a8a29e;
+				margin-top: 2px;
+			}
+
+			.sheet-full {
+				padding: 0 13px 24px;
+				display: none;
+			}
+			.sheet-full.visible {
+				display: block;
+			}
+			.sheet-img {
+				width: 100%;
+				height: 120px;
+				background: #f5f2eb;
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 11px;
+			}
+			.sheet-img-icon {
+				font-size: 30px;
+				color: #a8a29e;
+			}
+			.sheet-cat {
+				font-size: 10px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
+				margin-bottom: 3px;
+			}
+			.sheet-name {
+				font-size: 15px;
+				font-weight: 500;
+				color: #1c1917;
+				margin-bottom: 2px;
+			}
+			.sheet-period {
+				font-size: 11px;
+				color: #a8a29e;
+				margin-bottom: 9px;
+			}
+			.sheet-desc {
+				font-size: 13px;
+				color: #78716c;
+				line-height: 1.6;
+				margin-bottom: 11px;
+			}
+			.sheet-links {
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+			}
+			.sheet-link {
+				font-size: 12px;
+				color: #185fa5;
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				text-decoration: none;
+			}
+			.sheet-link:hover {
+				text-decoration: underline;
+			}
+			.close-btn {
+				float: right;
+				background: #f5f2eb;
+				border: none;
+				border-radius: 50%;
+				width: 26px;
+				height: 26px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				color: #78716c;
+				font-size: 14px;
+				margin: -2px -2px 8px 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<!-- Header -->
+			<div class="header">
+				<p class="header-eyebrow">Prototype · UI/UX concept</p>
+				<h1 class="header-title">Signal Hill Interactive Map</h1>
+				<p class="header-desc">
+					An interactive historical map for the Signal Hill Public Library.
+					Explore locations by category, click a marker to read more, and filter
+					by type.
+				</p>
+			</div>
+
+			<!-- Desktop section -->
+			<div class="section-label"><span>Desktop</span></div>
+			<div class="desktop-wrap">
+				<div class="d-app">
+					<div class="d-toolbar">
+						<span class="d-toolbar-title">Signal Hill</span>
+						<button class="filter-btn active" onclick="dSetFilter('all', this)">
+							All
+						</button>
+						<button class="filter-btn" onclick="dSetFilter('historical', this)">
+							Historical
+						</button>
+						<button class="filter-btn" onclick="dSetFilter('oil', this)">
+							Oil industry
+						</button>
+						<button class="filter-btn" onclick="dSetFilter('park', this)">
+							Parks
+						</button>
+						<button class="filter-btn" onclick="dSetFilter('culture', this)">
+							Arts &amp; culture
+						</button>
+						<button class="filter-btn" onclick="dSetFilter('landmark', this)">
+							Landmarks
+						</button>
+					</div>
+
+					<div class="d-map-row">
+						<div class="map-area" id="d-map">
+							<!-- Streets -->
+							<div class="street h major" style="top: 38%"></div>
+							<div class="street h major" style="top: 62%"></div>
+							<div class="street h" style="top: 25%"></div>
+							<div class="street h" style="top: 50%"></div>
+							<div class="street h" style="top: 75%"></div>
+							<div class="street v major" style="left: 30%"></div>
+							<div class="street v major" style="left: 65%"></div>
+							<div class="street v" style="left: 15%"></div>
+							<div class="street v" style="left: 48%"></div>
+							<div class="street v" style="left: 82%"></div>
+							<!-- Blocks -->
+							<div
+								class="block"
+								style="left: 16%; top: 26%; width: 12%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 31%; top: 26%; width: 15%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 49%; top: 26%; width: 14%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 66%; top: 26%; width: 14%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 16%; top: 39%; width: 12%; height: 22%"
+							></div>
+							<div
+								class="block"
+								style="left: 31%; top: 39%; width: 15%; height: 22%"
+							></div>
+							<div
+								class="block"
+								style="left: 49%; top: 39%; width: 14%; height: 22%"
+							></div>
+							<div
+								class="block"
+								style="left: 66%; top: 39%; width: 14%; height: 22%"
+							></div>
+							<div
+								class="block"
+								style="left: 16%; top: 63%; width: 12%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 31%; top: 63%; width: 15%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 49%; top: 63%; width: 14%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 66%; top: 63%; width: 14%; height: 11%"
+							></div>
+							<!-- Markers -->
+							<div
+								class="marker historical"
+								id="d-m0"
+								onclick="dSelectMarker(0)"
+								style="left: 22%; top: 35%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-building-monument marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker oil"
+								id="d-m1"
+								onclick="dSelectMarker(1)"
+								style="left: 40%; top: 55%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-building-factory marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker park"
+								id="d-m2"
+								onclick="dSelectMarker(2)"
+								style="left: 60%; top: 30%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-trees marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker culture"
+								id="d-m3"
+								onclick="dSelectMarker(3)"
+								style="left: 75%; top: 58%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-palette marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker landmark"
+								id="d-m4"
+								onclick="dSelectMarker(4)"
+								style="left: 50%; top: 72%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-map-pin marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker historical"
+								id="d-m5"
+								onclick="dSelectMarker(5)"
+								style="left: 85%; top: 42%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-building-monument marker-icon"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="d-panel">
+							<div class="d-panel-empty" id="d-empty">
+								<i class="ti ti-map-pin d-panel-empty-icon"></i>
+								<p class="d-panel-empty-text">
+									Select a marker on the map to learn more
+								</p>
+							</div>
+							<div class="d-panel-content" id="d-panel-content">
+								<div class="d-panel-header">
+									<button class="d-panel-close" onclick="dClosePanel()">
+										<i class="ti ti-x"></i>
+									</button>
+									<div class="d-panel-cat" id="d-panel-cat"></div>
+									<div class="d-panel-name" id="d-panel-name"></div>
+									<div class="d-panel-period" id="d-panel-period"></div>
+								</div>
+								<div class="d-panel-img">
+									<i class="ti ti-photo d-panel-img-icon"></i>
+								</div>
+								<div class="d-panel-body">
+									<p class="d-panel-desc" id="d-panel-desc"></p>
+									<div class="d-panel-links" id="d-panel-links"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="d-legend">
+						<div class="legend-item">
+							<div class="legend-dot" style="background: #1d9e75"></div>
+							Historical
+						</div>
+						<div class="legend-item">
+							<div class="legend-dot" style="background: #ba7517"></div>
+							Oil industry
+						</div>
+						<div class="legend-item">
+							<div class="legend-dot" style="background: #639922"></div>
+							Parks
+						</div>
+						<div class="legend-item">
+							<div class="legend-dot" style="background: #7f77dd"></div>
+							Arts &amp; culture
+						</div>
+						<div class="legend-item">
+							<div class="legend-dot" style="background: #d85a30"></div>
+							Landmarks
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Divider -->
+			<div class="divider"><span>mobile</span></div>
+
+			<!-- Mobile section -->
+			<div class="section-label"><span>Mobile</span></div>
+			<div class="mobile-wrap">
+				<div class="phone">
+					<div class="phone-notch"></div>
+					<div class="status-bar">
+						<span>9:41</span>
+						<div class="status-icons">
+							<i class="ti ti-wifi" style="font-size: 12px"></i>
+							<i class="ti ti-battery-2" style="font-size: 12px"></i>
+						</div>
+					</div>
+
+					<div class="m-app">
+						<div class="m-toolbar">
+							<div class="m-toolbar-top">
+								<span class="m-toolbar-title">Signal Hill</span>
+								<i class="ti ti-search m-toolbar-icon"></i>
+							</div>
+							<div class="m-filter-row">
+								<button
+									class="filter-btn active"
+									onclick="mSetFilter('all', this)"
+								>
+									All
+								</button>
+								<button
+									class="filter-btn"
+									onclick="mSetFilter('historical', this)"
+								>
+									Historical
+								</button>
+								<button class="filter-btn" onclick="mSetFilter('oil', this)">
+									Oil industry
+								</button>
+								<button class="filter-btn" onclick="mSetFilter('park', this)">
+									Parks
+								</button>
+								<button
+									class="filter-btn"
+									onclick="mSetFilter('culture', this)"
+								>
+									Arts &amp; culture
+								</button>
+								<button
+									class="filter-btn"
+									onclick="mSetFilter('landmark', this)"
+								>
+									Landmarks
+								</button>
+							</div>
+						</div>
+
+						<div class="map-area m-map-area" id="m-map">
+							<!-- Streets -->
+							<div class="street h major" style="top: 40%"></div>
+							<div class="street h major" style="top: 65%"></div>
+							<div class="street h" style="top: 22%"></div>
+							<div class="street h" style="top: 52%"></div>
+							<div class="street h" style="top: 78%"></div>
+							<div class="street v major" style="left: 28%"></div>
+							<div class="street v major" style="left: 62%"></div>
+							<div class="street v" style="left: 12%"></div>
+							<div class="street v" style="left: 45%"></div>
+							<div class="street v" style="left: 80%"></div>
+							<!-- Blocks -->
+							<div
+								class="block"
+								style="left: 13%; top: 23%; width: 13%; height: 16%"
+							></div>
+							<div
+								class="block"
+								style="left: 29%; top: 23%; width: 14%; height: 16%"
+							></div>
+							<div
+								class="block"
+								style="left: 46%; top: 23%; width: 14%; height: 16%"
+							></div>
+							<div
+								class="block"
+								style="left: 63%; top: 23%; width: 15%; height: 16%"
+							></div>
+							<div
+								class="block"
+								style="left: 13%; top: 41%; width: 13%; height: 23%"
+							></div>
+							<div
+								class="block"
+								style="left: 29%; top: 41%; width: 14%; height: 23%"
+							></div>
+							<div
+								class="block"
+								style="left: 46%; top: 41%; width: 14%; height: 23%"
+							></div>
+							<div
+								class="block"
+								style="left: 63%; top: 41%; width: 15%; height: 23%"
+							></div>
+							<div
+								class="block"
+								style="left: 13%; top: 66%; width: 13%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 29%; top: 66%; width: 14%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 46%; top: 66%; width: 14%; height: 11%"
+							></div>
+							<div
+								class="block"
+								style="left: 63%; top: 66%; width: 15%; height: 11%"
+							></div>
+							<!-- Markers -->
+							<div
+								class="marker historical"
+								id="m-m0"
+								onclick="mSelectMarker(0)"
+								style="left: 20%; top: 32%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-building-monument marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker oil"
+								id="m-m1"
+								onclick="mSelectMarker(1)"
+								style="left: 38%; top: 56%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-building-factory marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker park"
+								id="m-m2"
+								onclick="mSelectMarker(2)"
+								style="left: 58%; top: 28%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-trees marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker culture"
+								id="m-m3"
+								onclick="mSelectMarker(3)"
+								style="left: 74%; top: 60%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-palette marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker landmark"
+								id="m-m4"
+								onclick="mSelectMarker(4)"
+								style="left: 48%; top: 74%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-map-pin marker-icon"></i>
+								</div>
+							</div>
+							<div
+								class="marker historical"
+								id="m-m5"
+								onclick="mSelectMarker(5)"
+								style="left: 84%; top: 44%"
+							>
+								<div class="marker-pin">
+									<i class="ti ti-building-monument marker-icon"></i>
+								</div>
+							</div>
+
+							<div class="legend-float">
+								<div class="legend-item">
+									<div class="legend-dot" style="background: #1d9e75"></div>
+									Historical
+								</div>
+								<div class="legend-item">
+									<div class="legend-dot" style="background: #ba7517"></div>
+									Oil industry
+								</div>
+								<div class="legend-item">
+									<div class="legend-dot" style="background: #639922"></div>
+									Parks
+								</div>
+								<div class="legend-item">
+									<div class="legend-dot" style="background: #7f77dd"></div>
+									Arts &amp; culture
+								</div>
+								<div class="legend-item">
+									<div class="legend-dot" style="background: #d85a30"></div>
+									Landmarks
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="sheet-backdrop"
+							id="m-backdrop"
+							onclick="mCloseSheet()"
+						></div>
+
+						<div class="bottom-sheet" id="m-sheet">
+							<div class="sheet-handle" onclick="mToggleSheet()">
+								<div class="sheet-handle-bar"></div>
+							</div>
+							<div
+								class="sheet-peek-content"
+								id="m-peek"
+								onclick="mOpenSheet()"
+							>
+								<div class="sheet-peek-name" id="m-peek-name">
+									Tap a marker to explore
+								</div>
+								<div class="sheet-peek-sub" id="m-peek-sub">
+									Signal Hill historical map
+								</div>
+							</div>
+							<div class="sheet-full" id="m-sheet-full">
+								<button class="close-btn" onclick="mCloseSheet()">
+									<i class="ti ti-x"></i>
+								</button>
+								<div class="sheet-img">
+									<i class="ti ti-photo sheet-img-icon"></i>
+								</div>
+								<div class="sheet-cat" id="m-full-cat"></div>
+								<div class="sheet-name" id="m-full-name"></div>
+								<div class="sheet-period" id="m-full-period"></div>
+								<div class="sheet-desc" id="m-full-desc"></div>
+								<div class="sheet-links" id="m-full-links"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<p class="footer-note">
+				Map tiles representative · prototype built with React + Leaflet
+			</p>
+		</div>
+
+		<script>
+			const locations = [
+				{
+					id: 0,
+					name: "Signal Hill founding site",
+					cat: "historical",
+					catLabel: "Historical",
+					period: "1900s",
+					desc: "The original settlement point of Signal Hill, used by the Tongva people as a signaling location and later by early settlers for its panoramic views of the basin.",
+					links: ["City historical records", "Library archive"],
+				},
+				{
+					id: 1,
+					name: "Discovery Well No. 1",
+					cat: "oil",
+					catLabel: "Oil industry",
+					period: "1920s",
+					desc: "The site of the 1921 oil discovery that triggered one of the largest oil booms in California history, transforming Signal Hill overnight.",
+					links: ["LA Times archive", "Oil museum records"],
+				},
+				{
+					id: 2,
+					name: "Hilltop Park",
+					cat: "park",
+					catLabel: "Parks & nature",
+					period: "1970s",
+					desc: "A beloved community park at the summit offering 360-degree views of the LA basin, Long Beach, and on clear days, Catalina Island.",
+					links: ["City parks dept."],
+				},
+				{
+					id: 3,
+					name: "Signal Hill Arts Center",
+					cat: "culture",
+					catLabel: "Arts & culture",
+					period: "1990s",
+					desc: "A community arts hub hosting rotating exhibitions by local artists, with a permanent collection celebrating Signal Hill's multicultural heritage.",
+					links: ["Center website", "Current exhibitions"],
+				},
+				{
+					id: 4,
+					name: "Atlantic Ave. corridor",
+					cat: "landmark",
+					catLabel: "Landmark",
+					period: "1940s",
+					desc: "The historic commercial spine of Signal Hill, lined with mid-century storefronts that document the city's post-war growth and economic character.",
+					links: ["Historic survey report"],
+				},
+				{
+					id: 5,
+					name: "Burnett Acreage site",
+					cat: "historical",
+					catLabel: "Historical",
+					period: "1910s",
+					desc: "Former homestead of the Burnett family, one of Signal Hill's earliest landowners, whose agricultural use of the land predated the oil era.",
+					links: ["Deed records", "Family history archive"],
+				},
+			];
+
+			const catColors = {
+				historical: "cat-historical",
+				oil: "cat-oil",
+				park: "cat-park",
+				culture: "cat-culture",
+				landmark: "cat-landmark",
+			};
+
+			// ── Desktop ──────────────────────────────────────
+			let dActive = null;
+
+			function dSetFilter(cat, btn) {
+				document
+					.querySelectorAll(".d-toolbar .filter-btn")
+					.forEach((b) =>
+						b.classList.remove(
+							"active",
+							"oil",
+							"park",
+							"culture",
+							"landmark",
+							"historical",
+						),
+					);
+				btn.classList.add("active");
+				if (cat !== "all") btn.classList.add(cat);
+				for (let i = 0; i < 6; i++) {
+					const m = document.getElementById("d-m" + i);
+					m.classList.toggle(
+						"hidden",
+						cat !== "all" && locations[i].cat !== cat,
+					);
+				}
+				if (dActive !== null && cat !== "all" && locations[dActive].cat !== cat)
+					dClosePanel();
+			}
+
+			function dSelectMarker(id) {
+				if (dActive === id) {
+					dClosePanel();
+					return;
+				}
+				dActive = id;
+				for (let i = 0; i < 6; i++)
+					document
+						.getElementById("d-m" + i)
+						.classList.toggle("active", i === id);
+				const loc = locations[id];
+				document.getElementById("d-empty").style.display = "none";
+				const pc = document.getElementById("d-panel-content");
+				pc.style.display = "flex";
+				pc.style.flexDirection = "column";
+				pc.style.height = "100%";
+				const catEl = document.getElementById("d-panel-cat");
+				catEl.textContent = loc.catLabel;
+				catEl.className = "d-panel-cat " + (catColors[loc.cat] || "");
+				document.getElementById("d-panel-name").textContent = loc.name;
+				document.getElementById("d-panel-period").textContent = loc.period;
+				document.getElementById("d-panel-desc").textContent = loc.desc;
+				document.getElementById("d-panel-links").innerHTML = loc.links
+					.map(
+						(l) =>
+							'<a class="panel-link" href="#"><i class="ti ti-external-link" style="font-size:12px"></i>' +
+							l +
+							"</a>",
+					)
+					.join("");
+			}
+
+			function dClosePanel() {
+				dActive = null;
+				for (let i = 0; i < 6; i++)
+					document.getElementById("d-m" + i).classList.remove("active");
+				document.getElementById("d-empty").style.display = "flex";
+				document.getElementById("d-panel-content").style.display = "none";
+			}
+
+			// ── Mobile ───────────────────────────────────────
+			let mActive = null;
+			let mSheetState = "hidden";
+
+			function mSetFilter(cat, btn) {
+				document
+					.querySelectorAll(".m-filter-row .filter-btn")
+					.forEach((b) =>
+						b.classList.remove(
+							"active",
+							"oil",
+							"park",
+							"culture",
+							"landmark",
+							"historical",
+						),
+					);
+				btn.classList.add("active");
+				if (cat !== "all") btn.classList.add(cat);
+				for (let i = 0; i < 6; i++) {
+					const m = document.getElementById("m-m" + i);
+					m.classList.toggle(
+						"hidden",
+						cat !== "all" && locations[i].cat !== cat,
+					);
+				}
+				if (mActive !== null && cat !== "all" && locations[mActive].cat !== cat)
+					mCloseSheet();
+			}
+
+			function mSelectMarker(id) {
+				if (mActive === id && mSheetState !== "hidden") {
+					mCloseSheet();
+					return;
+				}
+				mActive = id;
+				for (let i = 0; i < 6; i++)
+					document
+						.getElementById("m-m" + i)
+						.classList.toggle("active", i === id);
+				const loc = locations[id];
+				document.getElementById("m-peek-name").textContent = loc.name;
+				document.getElementById("m-peek-sub").textContent =
+					loc.catLabel + " · " + loc.period;
+				const catEl = document.getElementById("m-full-cat");
+				catEl.textContent = loc.catLabel;
+				catEl.className = "sheet-cat " + (catColors[loc.cat] || "");
+				document.getElementById("m-full-name").textContent = loc.name;
+				document.getElementById("m-full-period").textContent = loc.period;
+				document.getElementById("m-full-desc").textContent = loc.desc;
+				document.getElementById("m-full-links").innerHTML = loc.links
+					.map(
+						(l) =>
+							'<a class="sheet-link" href="#"><i class="ti ti-external-link" style="font-size:12px"></i>' +
+							l +
+							"</a>",
+					)
+					.join("");
+				mPeekSheet();
+			}
+
+			function mPeekSheet() {
+				mSheetState = "peek";
+				const s = document.getElementById("m-sheet");
+				s.classList.remove("open");
+				s.classList.add("peek");
+				document.getElementById("m-peek").style.display = "block";
+				document.getElementById("m-sheet-full").classList.remove("visible");
+				document.getElementById("m-backdrop").classList.remove("visible");
+			}
+
+			function mOpenSheet() {
+				if (mActive === null) return;
+				mSheetState = "open";
+				const s = document.getElementById("m-sheet");
+				s.classList.remove("peek");
+				s.classList.add("open");
+				document.getElementById("m-peek").style.display = "none";
+				document.getElementById("m-sheet-full").classList.add("visible");
+				document.getElementById("m-backdrop").classList.add("visible");
+			}
+
+			function mToggleSheet() {
+				if (mSheetState === "peek") mOpenSheet();
+				else if (mSheetState === "open") mPeekSheet();
+			}
+
+			function mCloseSheet() {
+				mSheetState = "hidden";
+				const s = document.getElementById("m-sheet");
+				s.classList.remove("peek", "open");
+				document.getElementById("m-peek").style.display = "block";
+				document.getElementById("m-sheet-full").classList.remove("visible");
+				document.getElementById("m-backdrop").classList.remove("visible");
+				document.getElementById("m-peek-name").textContent =
+					"Tap a marker to explore";
+				document.getElementById("m-peek-sub").textContent =
+					"Signal Hill historical map";
+				for (let i = 0; i < 6; i++)
+					document.getElementById("m-m" + i).classList.remove("active");
+				mActive = null;
+			}
+		</script>
+	</body>
+</html>
